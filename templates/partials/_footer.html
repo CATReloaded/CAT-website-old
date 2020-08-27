@@ -1,0 +1,46 @@
+{% load static  %}
+ <!-- Start Footer -->
+  <footer class="wide-container Footer">
+    <!-- About CAT part -->
+    <div class="Footer__about-CAT">
+      <img src="{% static 'images/full logo.svg' %}" alt="CAT Reloaded logo">
+      <p>"CAT" is a non-profit foundation focused on" Computer Science and IT specially Open Source technologies</p>
+    </div>
+    <!-- Discover team part -->
+    <div class="Footer__discover-team">
+      <h2>Discover Our Team</h2>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'blogs' %}">Blogs</a></li>
+        <li><a href="{% url 'events' %}">Events</a></li>
+        <li><a href="{% url 'members' %}">Members</a></li>
+        <li><a href="{% url 'rewards' %}">Rewards</a></li>
+      </ul>
+    </div>
+    <!-- Location part -->
+    <div class="Footer__location">
+      <h2>Location</h2>
+      <p>Faculty of Engineering, Mansoura University, Mansoura, Egypt</p>
+    </div>
+    <!-- Social media part -->
+    <div class="Footer__contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="https://www.facebook.com/CATReloaded" target="_blank"><img src="{% static 'images/facebook.svg' %}" alt="Facebook page"></a>
+        </li>
+        <li><a href="https://twitter.com/CATReloaded"><img src="{% static 'images/twitter.svg' %}" alt="Twitter account"></a></li>
+        <li><a href="https://www.instagram.com/catreloaded/?hl=en"><img src="{% static 'images/instagram.svg' %}"
+              alt="Instagram account"></a></li>
+        <li><a href="https://www.youtube.com/channel/UCJaNoxBopnEOli2mI7PTlgg"><img src="{% static 'images/youtube.svg' %}"
+              alt="Youtube channel"></a></li>
+        <li><a href="https://www.linkedin.com/company/cat-reloaded/"><img src="{% static 'images/linkedin.svg' %}"
+              alt="Linkedin profile"></a></li>
+        <li class="github"><a href="https://github.com/CATReloaded"></a></li>
+        <li><a href="mailto:catreloaded-community@googlegroups.com"><img src="{% static 'images/google+.svg' %}"
+              alt="Google+ mail"></a></li>
+      </ul>
+    </div>
+    <!-- Copyrights -->
+    <p>&copy; Copyright 2020<a href="#">Privacy</a><a href="#">Terms</a><a href="#">FAQ</a></p>
+  </footer>
+  <!-- End Footer -->

@@ -1,0 +1,114 @@
+.Navbar {
+  position: relative;
+  background-color: $black-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  > ul {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    column-gap: 16px;
+    list-style: none;
+    @media screen and (max-width: 720px) {
+      position: absolute;
+      display: block;
+      top: -1000px;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background-color: rgba($color: $black-color, $alpha: 0.5);
+      transition: $transition;
+      &.active {
+        top: 80px;
+      }
+    }
+    > li {
+      position: relative;
+      transition: $transition;
+      border-radius: 15px;
+      > a,
+      > button {
+        padding: 6px 14px;
+        display: block;
+        color: $white-color;
+        font-weight: 600;
+      }
+      &:hover,
+      &.active {
+        background-color: $white-color;
+        > a,
+        > button {
+          color: $black-color;
+        }
+      }
+      // Contact menu
+      ul {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        list-style: none;
+        background-color: $white-color;
+        box-shadow: $shadow;
+        border-radius: 15px;
+        padding: 16px;
+        font-size: 14px;
+        transition: $transition;
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+        li {
+          &:not(:last-of-type) {
+            margin-bottom: 8px;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            height: 15px;
+            color: $black-color;
+            font-weight: 600;
+            img {
+              margin-right: 4px;
+              width: 15px;
+              height: 15px;
+              border: 1px solid $main-color;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__hamburger-menu {
+    @media screen and (min-width: 721px) {
+      display: none;
+    }
+    padding: 5px;
+    span {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      background-color: $white-color;
+      border-radius: 3px;
+      transform-origin: 4px 0px;
+      transition: $transition;
+      &:last-of-type {
+        transform-origin: 0 100%;
+      }
+    }
+    &.active span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      &:nth-of-type(2) {
+        opacity: 0;
+        transform: rotate(0) scale(0.2, 0.2);
+      }
+      &:last-of-type {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+    }
+  }
+}

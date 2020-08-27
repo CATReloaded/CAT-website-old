@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load static  %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Name </title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="Blog">
+  <!-- Start Navbar -->
+   {% include "partials/_navbar.html" %}
+  <!-- End Navbar -->
+
+  <!-- Start Article Image, Date and Category -->
+  <header>
+    <div class="image-wrapper">
+      <img src=" {% static 'images/article-cover.png' %}" alt="Article cover image">
+    </div>
+    <p class="container">February 25, 2020</p>
+    <p class="container">Category</p>
+  </header>
+  <!-- End Article Image, Date and Category -->
+
+  <div class="container">
+    <!-- Start Related Blogs -->
+    <aside>
+      <h2>Related Blogs</h2>
+      <section class="article">
+        <img src=" {% static 'images/article.png' %}" alt="Article image">
+        <h3>Excepteur sint.</h3>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+        <footer>
+          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
+          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
+          <a href="/Blog.html">See More</a>
+      </section>
+      <section class="article">
+        <img src=" {% static 'images/article.png' %}" alt="Article image">
+        <h3>Excepteur sint.</h3>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+        <footer>
+          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
+          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
+          <a href="/Blog.html">See More</a>
+      </section>
+      <section class="article">
+        <img src=" {% static 'images/article.png' %}" alt="Article image">
+        <h3>Excepteur sint.</h3>
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+        <footer>
+          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
+          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
+          <a href="/Blog.html">See More</a>
+      </section>
+    </aside>
+    <!-- End Related Blogs -->
+
+    <!-- Start Blog -->
+    <main>
+      <h1>Blog name</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
+        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
+        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
+        laborum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
+        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna
+        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
+        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
+        pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
+        laborum.
+        Sed
+        ut perspiciatis unde omnis iste natus error sit voluptatem accusantium poeyi doloremque laudantium, totam rem
+        aperiam,
+        eaque ipsa quae apsb illo inventore veritatis et quasi architecto beiatae vitae dicta sunt explicabo. Nemo enim
+        ipsam
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
+        adipisci
+        velit,
+        seprid quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliqueam quaerat voluptatem.</p>
+    </main>
+    <!-- End Blog -->
+  </div>
+
+  <!-- Start Author -->
+  <hr>
+  <section class="container Blog__author">
+    <img src=" {% static 'images/user.jpg' %}" alt="User avatar">
+    <p>Hassan Qassem</p>
+    <span>Front-end Circle</span>
+    <ul>
+      <li><a href="#"><img src=" {% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
+      <li><a href="#"><img src=" {% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
+      <li><a href="#"><img src=" {% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
+      <li><a href="#"><img src=" {% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+    </ul>
+  </section>
+  <!-- End Author -->
+
+  <!-- Start Comments -->
+  <section class="container Blog__comments">
+    <h2>Comments</h2>
+    <section>
+      <img src="{% static 'images/user.jpg' %}"  alt="User avatar">
+      <div>
+        <p class="comment-author">Hassan Qassem</p>
+        <p class="comment-date">1h ago</p>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
+        dolore magna
+        aliqua. Ut enim ad minim veniam.</p>
+    </section>
+    <section>
+      <img src="{% static 'images/user.jpg' %}"  alt="User avatar">
+      <div>
+        <p class="comment-author">Hassan Qassem</p>
+        <p class="comment-date">1h ago</p>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
+        dolore magna
+        aliqua. Ut enim ad minim veniam.</p>
+    </section>
+    <section>
+      <img src=" {% static 'images/user.jpg' %}"  alt="User avatar">
+      <div>
+        <p class="comment-author">Hassan Qassem</p>
+        <p class="comment-date">1h ago</p>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
+        dolore magna
+        aliqua. Ut enim ad minim veniam.</p>
+    </section>
+    <form>
+      <h3>Leave a reply</h3>
+      <div class="form-input">
+        <input type="text" name="name" id="name" required>
+        <label for="name">Name*</label>
+      </div>
+      <div class="form-input">
+        <input type="email" name="email" id="email" required>
+        <label for="email">Email*</label>
+      </div>
+      <div class="form-input">
+        <input type="url" name="website" id="website">
+        <label for="website">Website</label>
+      </div>
+      <div class="form-input comment">
+        <textarea name="comment" id="comment"></textarea>
+        <label for="comment">Comment</label>
+      </div>
+      <button type="submit">Reply</button>
+    </form>
+  </section>
+  <!-- End Comments -->
+
+  <!-- Start Footer -->
+ {% include "partials/_footer.html" %}
+  <!-- End Footer -->
+
+  <script src="./js/navigation.js"></script>
+  <script>
+    window.addEventListener("keyup", (e) => {
+      if (e.target.nodeName === "INPUT" && e.target.id) {
+        const input = document.getElementById(e.target.id);
+        if (!input.value) input.classList.remove("label-hidden");
+        else input.classList.add("label-hidden");
+      }
+    })
+  </script>
+</body>
+
+</html>

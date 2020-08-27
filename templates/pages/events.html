@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAT Reloaded events</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  {% include 'partials/_navbar.html' %}
+  <!-- End Navbar -->
+
+  <main class="container Events">
+    <h1>Events</h1>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>Jan 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>Feb 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>April 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>Oct 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>June 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>April 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>April 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+    <section class="Events__event">
+      <div class="Events__event__timeline"></div>
+      <button class="Events__event__image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event">
+      </button>
+      <div class="Events__event__content">
+        <h2>Scope</h2>
+        <span>April 2020</span>
+        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+          Ipsum has
+          been the industry's standard dummy when an unknown printer.</p>
+      </div>
+      <div class="Events__event__circle"></div>
+    </section>
+  </main>
+
+<!-- Start Footer -->
+    {% include 'partials/_footer.html' %}
+<!-- Start Footer -->
+  <!-- Start Event Overlay -->
+  <section class="hidden container Event">
+    <button class="Event__close">&times;</button>
+    <header class="Event__header">
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event main image">
+      </div>
+      <h2>SCOPE</h2>
+      <p>April 2020</p>
+      <p class="Event__header__desc">Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem Ipsum has
+      been the industry's standard dummy when an unknown printer. dolo Contrary to popular belief, Lorem Ipsum is not simply
+      random text. It has roots in a piece of co classical Latin literature from 45 BC, making it over 2000 years old. Richard
+      McClintock, a Latin at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, cons, from a
+      Lorem Ipsum passage, and going through the cites of the word in classical literature, do discovered the undoubtable
+      source.There are many variations of passages of Lorem Ipsum cont available, but the majority have suffered alteration in
+      some form, by injected humour, or consec, randomised words which don't look even slightly, looked up one of the more
+      obscure Latin wo, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, do
+      discovered the undoubtable source.There are many variations of passages of Lorem Ipsum cont</p>
+    </header>
+    <div class="Event__images">
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event images">
+      </div>
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event images">
+      </div>
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event images">
+      </div>
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event images">
+      </div>
+      <div class="image-wrapper">
+        <img src="{% static 'images/event.jpg' %}" alt="Event images">
+      </div>
+    </div>
+  </section>
+  <!-- End Event Overlay -->
+
+  <script src="{% static 'js/navigation.js' %}"></script>
+  <script src="{% static 'js/events.js' %}"></script>
+</body>
+
+</html>
