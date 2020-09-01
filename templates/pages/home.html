@@ -19,54 +19,14 @@
     <section class="circles container">
       <h2>Circles</h2>
       <section>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/graphic.svg' %}" alt="Graphic icon">
+        {% for circle in circles %}
+          <div>
+            <div class="image-wrapper">
+              <img src="/media/{{circle.icon}}" alt="{{circle.name}} icon">
+            </div>
+            <p><span>{{ circle.name }}</span> Circle</p>
           </div>
-          <p><span>Graphic</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/game.svg' %}" alt="Game icon">
-          </div>
-          <p><span>Game</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/web.svg' %}" alt="Web icon">
-          </div>
-          <p><span>Web</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/mobile.svg' %}" alt="Mobile icon">
-          </div>
-          <p><span>Mobile</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/data.svg' %}" alt="Data icon">
-          </div>
-          <p><span>Data Science</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/embedded.svg' %}" alt="Embedded icon">
-          </div>
-          <p><span>Embedded</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/security.svg' %}" alt="Security icon">
-          </div>
-          <p><span>Security</span> Circle</p>
-        </div>
-        <div>
-          <div class="image-wrapper">
-            <img src="{% static 'images/marketing.svg' %}" alt="Marketing icon">
-          </div>
-          <p><span>Marketing</span> Circle</p>
-        </div>
+        {% endfor %}
         <div>
           <div class="image-wrapper">
             <img src="{% static 'images/nontech.svg' %}" alt="Non-technical icon">
@@ -79,168 +39,32 @@
   <!-- Start Technical circles -->
     <section class="container tech-circles">
       <h2>Technical Circles</h2>
-      <section>
+      {%for circle in technical_circles%}
+        <section>
         <img src="{% static 'images/frontend-circle.svg' %}" alt="Front-end circle image">
-        <h3>Front-end Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
+        <h3>{{circle.name}}</h3>
+        <p>{{circle.description}}</p>
         <h4>Leader</h4>
-        <p class="leader-name">Hassan Qassem</p>
-        <a href="{% url 'circle' %}">See more</a>
+        <p class="leader-name">{{circle.leader}}</p>
+        <a href="{% url 'circle' circle.name %}">See more</a>
       </section>
-      <section>
-        <img src="{% static 'images/backend-circle.svg' %}" alt="Back-end circle image">
-        <h3>Back-end Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">El-Saeed Ahmed</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/android-circle.svg' %}" alt="Android circle image">
-        <h3>Android Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Mohammed Hamdy</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/ios-circle.svg' %}" alt="IOS circle image">
-        <h3>IOS Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Sherif El-deeb</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/graphic-circle.svg' %}" alt="Graphic circle image">
-        <h3>Graphic Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Khaled El-Mansy</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/game-circle.svg' %}" alt="Game circle image">
-        <h3>Game Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Mohammed El-Sherbini</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/data-circle.svg' %}" alt="Date science circle image">
-        <h3>Date science Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Nouran Ali</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/security-circle.svg' %}" alt="Security circle image">
-        <h3>Security Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Yasser El-Snbary</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/embedded-circle.svg' %}" alt="Embedded circle image">
-        <h3>Embedded Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Ali Ghorab</p>
-        <a href="/Circles.html">See more</a>
-      </section>
+      {% endfor %}
     </section>
     <!-- End Technical circles -->
 
     <!-- Start Non-technical circles -->
     <section class="container non-tech-circles">
       <h2>Non - Technical Circles</h2>
-      <section>
-        <img src="{% static 'images/hr-circle.svg' %}" alt="HR circle image">
-        <h3>HR Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Tasneem El-Ghobashy</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/pr-circle.svg' %}" alt="PR circle image">
-        <h3>PR Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Hossam Asaad</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/logistics-circle.svg' %}" alt="Logistics circle image">
-        <h3>Logistics Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Nahla Galal</p>
-        <a href="/Circles.html">See more</a>
-      </section>
-      <section>
-        <img src="{% static 'images/media-circle.svg' %}" alt="Media circle image">
-        <h3>Media Circle</h3>
-        <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor alore industry.
-          Lorem Ipsum
-          has been the industry's standard dummy when an unknown printer. dolor cont standard dummy Contrary to popular
-          belief,
-          standard dummy lorem ipsum dolor.</p>
-        <h4>Leader</h4>
-        <p class="leader-name">Roaa Mohammed</p>
-        <a href="/Circles.html">See more</a>
-      </section>
+      {%for circle in non_technical_circles%}
+        <section>
+          <img src="/media/{{circle.image}}" alt="{{circle.name}} circle image">
+          <h3>{{circle.name}}</h3>
+          <p>{{circle.description}}</p>
+          <h4>Leader</h4>
+          <p class="leader-name">{{circle.leader}}</p>
+          <a href="{% url 'circle' circle.name %}">See more</a>
+        </section>
+      {% endfor %}
     </section>
     <!-- End Non-technical circles -->
     <!-- Start Blogs -->

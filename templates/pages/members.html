@@ -8,115 +8,45 @@
     <section class="Members__team">
       <h2>Our team</h2>
       <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>Hassan Qassem</p>
+        <img src="/media/{{ cor.image }}" alt="User avatar">
+        <p>{{ cor.name }}</p>
         <span>Coordinator</span>
         <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+          {% if cor.git %}
+              <li><a href="{{cor.git}}"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
+            {% endif %}
+            {% if cor.linked_in %}
+              <li><a href="{{cor.linked_in}}"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
+            {% endif %}
+            {%if cor.twitter %}
+              <li><a href="{{cor.twitter}}"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
+            {% endif %}
+            {% if cor.facebook %}
+              <li><a href="{{cor.twitter}}"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+            {% endif %} href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
         </ul>
       </div>
-      <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
+      {% for leader in leaders %}
         <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-      <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>Hassan Qassem</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-      <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-    <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-       <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
+          <img src="/media/{{ leader.image }}" alt="User avatar">
+          <p>{{ leader.name }}</p>
+          <span>{{leader.circle}} Leader</span>
+          <ul>
+            {% if leader.git %}
+              <li><a href="{{leader.git}}"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
+            {% endif %}
+            {% if leader.linked_in %}
+              <li><a href="{{leader.linked_in}}"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
+            {% endif %}
+            {%if leader.twitter %}
+              <li><a href="{{leader.twitter}}"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
+            {% endif %}
+            {% if leader.facebook %}
+              <li><a href="{{leader.facebook}}"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      {% endfor %}
       
 
       
@@ -126,74 +56,27 @@
     <!-- Start Team Founders -->
     <section class="Members__founders">
       <h2>Founders</h2>
-      
-    <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        
-   <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
+      {%for founder in founders%}
         <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-      <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
-        <div>
-        <img src="{% static 'images/user.jpg' %}" alt="User avatar">
-        <p>El-Saeed Ahmed</p>
-        <span>Back-end Leader</span>
-        <ul>
-          <li><a href="#"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-          <li><a href="#"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-          <li><a href="#"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
-        </ul>
-      </div>
+          <img src="/media/{{founder.image}}" alt="User avatar">
+          <p>{{ founder.name }}</p>
+          <span>{{founder.description}}</span>
+          <ul>
+            {% if founder.git %}
+              <li><a href="{{founder.git}}"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
+            {% endif %}
+            {% if founder.linked_in %}
+              <li><a href="{{founder.linked_in}}"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
+            {% endif %}
+            {%if founder.twitter %}
+              <li><a href="{{founder.twitter}}"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
+            {% endif %}
+            {% if founder.facebook %}
+              <li><a href="{{founder.facebook}}"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+            {% endif %}
+          </ul>
+        </div>
+      {%endfor%}
     </section>
     <!-- End Team Founders -->
   </main>
