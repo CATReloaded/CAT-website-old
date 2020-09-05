@@ -20,7 +20,11 @@ def blogs(request):
     return render(request, 'blog/blogs.html',context)
 
 def single_blog(request,art):
+    atricle = get_object_or_404(Article,body__contains=art)
+    related_atrs = Article.objects.filter(category=atricle.category)[:3]
     context = {
-        "article" : get_object_or_404(Article,body__contains=art)
+        "article" : atricle,
+        "comments" : atricle.comments.all(),
+        "related_articles" : related_atrs,
     }
     return render(request, 'blog/single_blog.html',context)

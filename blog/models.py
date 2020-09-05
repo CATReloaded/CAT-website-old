@@ -19,7 +19,7 @@ class Article(models.Model):
 
 
 class comment(models.Model):
-    comment = models.TextField()
+    comment = models.CharField(max_length=240)
     date = models.DateTimeField(auto_now_add=True)
-    auther = models.ForeignKey(Member,on_delete=models.CASCADE,related_name="comments")
-
+    author = models.ForeignKey(Member,on_delete=models.CASCADE,related_name="comments")
+    article = models.ForeignKey(Article,on_delete=models.CASCADE,related_name="comments")

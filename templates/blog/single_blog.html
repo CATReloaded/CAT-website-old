@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Name </title>
+  <title>{{article.title}} </title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
@@ -17,10 +17,10 @@
   <!-- Start Article Image, Date and Category -->
   <header>
     <div class="image-wrapper">
-      <img src=" {% static 'images/article-cover.png' %}" alt="Article cover image">
+      <img src="/media/{{article.image}}" alt="Article cover image">
     </div>
-    <p class="container">February 25, 2020</p>
-    <p class="container">Category</p>
+    <p class="container">{{artice.date|date:"SHORT_DATETIME_FORMAT"}}</p>
+    <p class="container">{{article.category}}</p>
   </header>
   <!-- End Article Image, Date and Category -->
 
@@ -28,76 +28,29 @@
     <!-- Start Related Blogs -->
     <aside>
       <h2>Related Blogs</h2>
-      <section class="article">
-        <img src=" {% static 'images/article.png' %}" alt="Article image">
-        <h3>Excepteur sint.</h3>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-        <footer>
-          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-          <a href="/Blog.html">See More</a>
-      </section>
-      <section class="article">
-        <img src=" {% static 'images/article.png' %}" alt="Article image">
-        <h3>Excepteur sint.</h3>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-        <footer>
-          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-          <a href="/Blog.html">See More</a>
-      </section>
-      <section class="article">
-        <img src=" {% static 'images/article.png' %}" alt="Article image">
-        <h3>Excepteur sint.</h3>
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-        <footer>
-          <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-          <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-          <a href="/Blog.html">See More</a>
-      </section>
+      {% for r_article in related_articles %}
+        <section class="article">
+          <img src="/media/{{r_article.image}}" alt="Article image">
+          <h3>{{r_article.title}}</h3>
+          <p>{{ r_article.body|truncatechars:100 }}</p>
+          <footer>
+            {% if r_article.likes %}
+              <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{r_article.likes}}</span>
+            {% endif %}
+            {% if r_article.comments_num %}
+              <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">{{r_article.comments_num}}</span>
+            {% endif %}
+            <a href="{% url 'single_blog' r_article.title %}">See More</a>
+          </footer>
+        </section>
+      {% endfor %}
     </aside>
     <!-- End Related Blogs -->
 
     <!-- Start Blog -->
     <main>
-      <h1>Blog name</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
-        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
-        pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
-        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
-        pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
-        laborum.
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
-        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna
-        aliqua. Ut enim ad minim veniam, quiepakis nostrud exercitation ullamco laboris nsi ut aliquip ex ea comepmodo
-        consetquat. Duis aute irure dolor in reprehenderit in voluptate velit esse cfgillum dolore eutpe fugiat nulla
-        pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt inpeku culpa qui officia deserunt mollit anim id est
-        laborum.
-        Sed
-        ut perspiciatis unde omnis iste natus error sit voluptatem accusantium poeyi doloremque laudantium, totam rem
-        aperiam,
-        eaque ipsa quae apsb illo inventore veritatis et quasi architecto beiatae vitae dicta sunt explicabo. Nemo enim
-        ipsam
-        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-        voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-        adipisci
-        velit,
-        seprid quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliqueam quaerat voluptatem.</p>
+      <h1>{{article.title}}</h1>
+      <p>{{article.body}}</p>
     </main>
     <!-- End Blog -->
   </div>
@@ -105,14 +58,22 @@
   <!-- Start Author -->
   <hr>
   <section class="container Blog__author">
-    <img src=" {% static 'images/user.jpg' %}" alt="User avatar">
-    <p>Hassan Qassem</p>
-    <span>Front-end Circle</span>
+    <img src="/media/{{article.author.image}}" alt="User avatar">
+    <p>{{article.author.name}}</p>
+    <span>{{article.author.circle}}</span>
     <ul>
-      <li><a href="#"><img src=" {% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
-      <li><a href="#"><img src=" {% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
-      <li><a href="#"><img src=" {% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
-      <li><a href="#"><img src=" {% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+      {% if article.author.git %}
+        <li><a href="{{article.author.git}}"><img src="{% static 'images/github-red.svg' %}" alt="Github profile"></a></li>
+      {% endif %}
+      {% if article.author.linked_in %}
+        <li><a href="{{article.author.linked_in}}"><img src="{% static 'images/linkedin-red.svg' %}" alt="Linkedin profile"></a></li>
+      {% endif %}
+      {%if article.author.twitter %}
+        <li><a href="{{article.author.twitter}}"><img src="{% static 'images/twitter-red.svg' %}" alt="Twitter account"></a></li>
+      {% endif %}
+      {% if article.author.facebook %}
+        <li><a href="{{article.author.facebook}}"><img src="{% static 'images/facebook-red.svg' %}" alt="Facebook account"></a></li>
+      {% endif %}
     </ul>
   </section>
   <!-- End Author -->
@@ -120,36 +81,18 @@
   <!-- Start Comments -->
   <section class="container Blog__comments">
     <h2>Comments</h2>
-    <section>
-      <img src="{% static 'images/user.jpg' %}"  alt="User avatar">
-      <div>
-        <p class="comment-author">Hassan Qassem</p>
-        <p class="comment-date">1h ago</p>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
-        dolore magna
-        aliqua. Ut enim ad minim veniam.</p>
-    </section>
-    <section>
-      <img src="{% static 'images/user.jpg' %}"  alt="User avatar">
-      <div>
-        <p class="comment-author">Hassan Qassem</p>
-        <p class="comment-date">1h ago</p>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
-        dolore magna
-        aliqua. Ut enim ad minim veniam.</p>
-    </section>
-    <section>
-      <img src=" {% static 'images/user.jpg' %}"  alt="User avatar">
-      <div>
-        <p class="comment-author">Hassan Qassem</p>
-        <p class="comment-date">1h ago</p>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut ero labore et
-        dolore magna
-        aliqua. Ut enim ad minim veniam.</p>
-    </section>
+    {% for comment in comments %}
+      <section>
+        <img src="/media/{{ comment.author.image }}"  alt="User avatar">
+        <div>
+          <p class="comment-author">{{ comment.author.name }}</p>
+          <p class="comment-date">{{ comment.date }}</p>
+        </div>
+        <p>{{ comment.comment }}</p>
+      </section>
+    {% endfor %}
+
+
     <form>
       <h3>Leave a reply</h3>
       <div class="form-input">
