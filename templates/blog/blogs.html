@@ -17,8 +17,19 @@
     <h1>Blogs</h1>
     <input type="search" name="search" id="search" placeholder="Search">
 
-    <!-- Start Select Month -->
-    <p>ARCHIVES</p>
+    <!-- Start Select Category -->
+    <p>CATEGORIES</p>
+    <select name="blog-category">
+      <option value="" selected disabled> Select Category </option>
+      {%for category in categories %}
+        <option value="{{category.name}}">{{category.name}}</option>
+      {% endfor %}
+    </select>
+
+    <!-- End Select Category -->
+
+        <!-- Start Select Month -->
+    {% comment %} <p>ARCHIVES</p>
     <select name="blog-time">
       <option value="" selected disabled> Select Month </option>
       <option value="January-2018">January 2018</option>
@@ -28,117 +39,53 @@
       <option value="January-2020">January 2020</option>
       <option value="June-2020">June 2020</option>
       <option value="July-2020">July 2020</option>
-    </select>
+    </select> {% endcomment %}
     <!-- End Select Month -->
 
-    <!-- Start Select Category -->
-    <p>CATEGORIES</p>
-    <select name="blog-category">
-      <option value="" selected disabled> Select Category </option>
-      <option value="Category1">Category 1</option>
-      <option value="Category2">Category 2</option>
-      <option value="Category3">Category 3</option>
-      <option value="Category4">Category 4</option>
-      <option value="Category5">Category 5</option>
-      <option value="Category6">Category 6</option>
-      <option value="Category7">Category 7</option>
-    </select>
-    <!-- End Select Category -->
+
   </header>
-
   <main class="container">
-    <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-    <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/single_blog.html">See More</a>
-      </footer>
-    </section>
-    <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-    <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-    <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-       <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-       <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-       <section class="article">
-      <img src=" {% static 'images/article.png' %}" alt="Article image">
-      <h3>Excepteur sint.</h3>
-      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-      <footer>
-        <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">609</span>
-        <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">609</span>
-        <a href="/Blog.html">See More</a>
-      </footer>
-    </section>
-
- 
-
+    {% for article in page_obj %}
+      <section class="article">
+        <img src="/media/{{article.image}}" alt="Article image">
+        <h3>{{article.title}}</h3>
+        <p>{{ article.body|truncatechars:100 }}</p>
+        <footer>
+          {% if article.likes %}
+            <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{article.likes}}</span>
+          {% endif %}
+          {% if article.comments_num %}
+            <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">{{article.comments_num}}</span>
+          {% endif %}
+          <a href="{% url 'single_blog' article.title %}">See More</a>
+        </footer>
+      </section>
+    {% endfor %}
     <!-- Paging -->
-    <footer>
-      <button>&xlarr;</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>&xrarr;</button>
-    </footer>
+    {% if page_obj.has_other_pages %}
+      <footer>
+
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}"><button>&xlarr;</button></a>
+        {% endif %}
+
+        {% for i in page_obj.paginator.page_range|slice:"page_obj.number:" %}
+          {% if forloop.counter < 5 %}
+            {% if page_obj.number == i %}
+              <button disabled>i</button>
+            {% else %}
+              <a href="?page={{i}}"><button>i</button></a>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if users.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}"><button>&xrarr;</button></a>
+        {% endif %}
+      
+      </footer>
+    {% endif %}
+
   </main>
 
 {% include "partials/_footer.html" %}

@@ -72,36 +72,24 @@
       <h2>Blogs</h2>
       <div class="blogs__content">
         <button>&lt;</button>
-        <section class="article">
-          <img src="{% static 'images/article.png' %}" alt="Article image">
-          <h3>Excepteur sint.</h3>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-          <footer>
-            <span class="blogs__content__likes"><img src="{% static 'images/heart.svg' %}" alt="like icon">609</span>
-            <span class="blogs__content__comments"><img src="{% static 'images/comment.svg' %}" alt="comment icon">609</span>
-            <a href="/Blog.html">See More</a>
-          </footer>
-        </section>
-        <section class="article">
-          <img src="{% static 'images/article.png' %}" alt="Article image">
-          <h3>Excepteur sint.</h3>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-          <footer>
-            <span class="blogs__content__likes"><img src="{% static 'images/heart.svg' %}" alt="like icon">609</span>
-            <span class="blogs__content__comments"><img src="{% static 'images/comment.svg' %}" alt="comment icon">609</span>
-            <a href="/Blog.html">See More</a>
-          </footer>
-        </section>
-        <section class="article">
-          <img src="{% static 'images/article.png' %}" alt="Article image">
-          <h3>Excepteur sint.</h3>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-          <footer>
-            <span class="blogs__content__likes"><img src="{% static 'images/heart.svg' %}" alt="like icon">609</span>
-            <span class="blogs__content__comments"><img src="{% static 'images/comment.svg' %}" alt="comment icon">609</span>
-            <a href="/Blog.html">See More</a>
-          </footer>
-        </section>
+        
+        {% for article in articles %}
+          <section class="article">
+            <img src="/media/{{article.image}}" alt="Article image">
+            <h3>{{article.title}}</h3>
+            <p>{{ article.body|truncatechars:100 }}</p>
+            <footer>
+              {% if article.likes %}
+                <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{article.likes}}</span>
+              {% endif %}
+              {% if article.comments_num %}
+                <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">{{article.comments_num}}</span>
+              {% endif %}
+              <a href="{% url 'single_blog' article.title %}">See More</a>
+            </footer>
+          </section>
+        {% endfor %}
+        
         <button>&gt;</button>
       </div>
       <div class="blogs__controls">

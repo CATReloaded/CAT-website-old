@@ -64,18 +64,13 @@ class Founder(models.Model):
     description = models.CharField(max_length=30)
 
 class Reward(models.Model):
-    ranks = [
-        ("First",'First'),
-        ("Second",'Second'),
-        ("Third",'Third')
-    ]
-
-    member = models.ForeignKey(Member,on_delete=models.CASCADE)
-    rank = models.CharField(max_length=10,choices=ranks)
+    first = models.ForeignKey(Member,on_delete=models.CASCADE,related_name='first')
+    second = models.ForeignKey(Member,on_delete=models.CASCADE,related_name='second')
+    third = models.ForeignKey(Member,on_delete=models.CASCADE,related_name='third')
     circle = models.ForeignKey(Circle,on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f'{self.member.name} {self.circle} {self.rank}'
+    # def __str__(self):
+    #     return f'{self.first.name} {self.circle}'
     
 
 class Event(models.Model):

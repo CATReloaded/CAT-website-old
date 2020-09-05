@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .models import *
 from django.shortcuts import get_object_or_404
+from blog.models import Article
 
 def home(request):
     circles = Circle.objects.all()
     context = {
         'technical_circles':circles.filter(circle_type="technical"),
-        'non_technical_circles' : circles.filter(circle_type="non-technical")
+        'non_technical_circles' : circles.filter(circle_type="non-technical"),
+        'articles' : Article.objects.all().order_by('-date')[:3]
     }
     return render(request, 'pages/home.html', context)
 
@@ -32,12 +34,12 @@ def circle(request,circle):
 
 def events(request):
     context = {
-
+        'events' : Event.objects.all().order_by('-date')
     }
     return render(request, 'pages/events.html', context)
 
 def rewards(request):
     context = {
-
+        "circle_rewards" : Reward.objects.all()
     }
     return render(request, 'pages/rewards.html', context)
