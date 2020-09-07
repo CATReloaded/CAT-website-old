@@ -82,18 +82,36 @@
   <section class="container Blog__comments">
     <h2>Comments</h2>
     {% for comment in comments %}
-      <section>
-        <img src="/media/{{ comment.author.image }}"  alt="User avatar">
-        <div>
-          <p class="comment-author">{{ comment.author.name }}</p>
-          <p class="comment-date">{{ comment.date }}</p>
-        </div>
-        <p>{{ comment.comment }}</p>
-      </section>
+      {% if comment.author %}
+        <section>
+          <img src="/media/{{ comment.author.image }}"  alt="User avatar">
+          <div>
+            <p class="comment-author">{{ comment.author.name }}</p>
+            <p class="comment-date">{{ comment.date|date:"SHORT_DATETIME_FORMAT" }}</p>
+          </div>
+          <p>{{ comment.comment }}</p>
+        </section>
+      {% else %}
+        <section>
+          <img src="{% static 'images/user.jpg' %}"  alt="User avatar">
+          <div>
+            <p class="comment-author">{{ comment.anynous_name }}</p>
+            <p class="comment-date">{{ comment.date|date:"SHORT_DATETIME_FORMAT" }}</p>
+          </div>
+          <p>{{ comment.comment }}</p>
+        </section>
+      {% endif %}
     {% endfor %}
 
+    {% comment %} 
 
-    <form>
+        the next is useless
+        we should fix and make users system for better exp
+
+    
+     {% endcomment %}
+    <form action="{% url "single_blog"  article.title %}" method="post">
+      {% csrf_token %}
       <h3>Leave a reply</h3>
       <div class="form-input">
         <input type="text" name="name" id="name" required>
@@ -120,7 +138,7 @@
  {% include "partials/_footer.html" %}
   <!-- End Footer -->
 
-  <script src="./js/navigation.js"></script>
+  <script src="{% static "js/navigation.js" %}"></script>
   <script>
     window.addEventListener("keyup", (e) => {
       if (e.target.nodeName === "INPUT" && e.target.id) {

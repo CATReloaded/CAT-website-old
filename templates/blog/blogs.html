@@ -15,16 +15,27 @@
 
   <header class="container">
     <h1>Blogs</h1>
-    <input type="search" name="search" id="search" placeholder="Search">
 
-    <!-- Start Select Category -->
-    <p>CATEGORIES</p>
-    <select name="blog-category">
-      <option value="" selected disabled> Select Category </option>
-      {%for category in categories %}
-        <option value="{{category.name}}">{{category.name}}</option>
-      {% endfor %}
-    </select>
+  {% comment %} 
+    the next form need some front-end work
+    added submit and form tag
+    submit button can be deleted and change with 
+   {% endcomment %}
+
+
+    <form action="." method="get">
+
+      <input type="search" name="search" id="search" placeholder="Search">
+      <!-- Start Select Category -->
+      <p>CATEGORIES</p>
+      <select name="blog-category">
+        <option value="" selected disabled> Select Category </option>
+        {%for category in categories %}
+          <option value="{{category.id}}">{{category.name}}</option>
+        {% endfor %}
+      </select>
+      {% comment %} <input type="submit" value="search"> {% endcomment %}
+    </form>
 
     <!-- End Select Category -->
 
