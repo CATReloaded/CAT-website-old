@@ -34,7 +34,7 @@ def circle(request,circle):
 
 def events(request):
     context = {
-        'events' : Event.objects.all().order_by('-date')
+        'events' : Event.objects.all().prefetch_related('images').order_by('-date')
     }
     return render(request, 'pages/events.html', context)
 

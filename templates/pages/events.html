@@ -28,13 +28,19 @@
           <p data-text="{{event.description}}">{{ event.description|truncatechars:80 }}</p>
         </div>
         <div class="Events__event__circle"></div>
+        {% for image in event.images.all %}
+          <div data-row="{{image.img}}" id="eveimgs"></div>
+        {% endfor %}
       </section>
     {% endfor %}
   </main>
+  {% comment %} <script>console.log(imgs)</script {% endcomment %}
 
 <!-- Start Footer -->
     {% include 'partials/_footer.html' %}
 <!-- Start Footer -->
+
+
   <!-- Start Event Overlay -->
   <section class="hidden container Event">
     <button class="Event__close">&times;</button>
@@ -42,22 +48,14 @@
       <div class="image-wrapper">
         <img src="{% static 'images/event.jpg' %}" alt="Event main image">
       </div>
-      <h2>SCOPE</h2>
-      <p>April 2020</p>
-      <p class="Event__header__desc">Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem Ipsum has
-      been the industry's standard dummy when an unknown printer. dolo Contrary to popular belief, Lorem Ipsum is not simply
-      random text. It has roots in a piece of co classical Latin literature from 45 BC, making it over 2000 years old. Richard
-      McClintock, a Latin at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, cons, from a
-      Lorem Ipsum passage, and going through the cites of the word in classical literature, do discovered the undoubtable
-      source.There are many variations of passages of Lorem Ipsum cont available, but the majority have suffered alteration in
-      some form, by injected humour, or consec, randomised words which don't look even slightly, looked up one of the more
-      obscure Latin wo, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, do
-      discovered the undoubtable source.There are many variations of passages of Lorem Ipsum cont</p>
+      <h2></h2>
+      <p></p>
+      <p class="Event__header__desc"></p>
     </header>
 
     
     <div class="Event__images">
-      <div class="image-wrapper">
+      {% comment %} <div class="image-wrapper">
         <img src="{% static 'images/event.jpg' %}" alt="Event images">
       </div>
       <div class="image-wrapper">
@@ -71,7 +69,7 @@
       </div>
       <div class="image-wrapper">
         <img src="{% static 'images/event.jpg' %}" alt="Event images">
-      </div>
+      </div> {% endcomment %}
     </div>
   </section>
   <!-- End Event Overlay -->

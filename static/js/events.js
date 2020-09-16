@@ -4,7 +4,7 @@ const eventOverlay = document.querySelector(".Event");
 events.forEach((event) =>
   event.addEventListener("click", (e) => {
     var arr = get_data(e);
-    overwrite_overlay_object(eventOverlay,arr)
+    overwrite_overlay_object(eventOverlay,arr,)
     eventOverlay.classList.remove("hidden")
   }));
 
@@ -17,17 +17,31 @@ function get_data(e){
   if(e.target.localName==="img"){
   var btn = e.target.parentNode;
   }else {var btn = e.target;}
-  console.log(e)
+  var imgs = (btn.parentNode.querySelectorAll("#eveimgs"))
   var img = btn.querySelector("img").getAttribute("src");
   var title = btn.nextElementSibling.querySelector("h2").innerText;
   var description = btn.nextElementSibling.querySelector("p").getAttribute("data-text");
   var date = btn.nextElementSibling.querySelector("span").getAttribute("data-text");
-  return [img,title,description,date] ;
+  return [img,title,description,date,imgs] ;
 }
 
-function overwrite_overlay_object(eventOverlay,arr){
+
+
+function overwrite_overlay_object(eventOverlay,arr,){
   eventOverlay.querySelector("img[alt='Event main image']").setAttribute("src",arr[0]);
   eventOverlay.querySelector("h2").innerText = arr[1];
   eventOverlay.querySelector(".Event__header__desc").innerText = arr[2];
   eventOverlay.querySelector("p").innerText = arr[3];
+  
+  var imgDiv = eventOverlay.querySelector(".Event__images");
+  imgDiv.innerText = "";
+  
+  arr[4].forEach((img)=>{
+    let div =  document.createElement("div");
+    div.className = "image-wrapper";
+    let imgTag = document.createElement("img");
+    imgTag.setAttribute("src", "/media/"+img.getAttribute("data-row"));
+    div.appendChild(imgTag);
+    imgDiv.appendChild(div);
+  })
 }
