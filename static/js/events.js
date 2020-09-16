@@ -14,10 +14,10 @@ document
 
 
 function get_data(e){
-  // if(e.target.localName==="img"){
-  // var btn = e.target.parentNode;
-  // }else {var btn = e.target;}
-  var btn = document.querySelector("#event-btn")
+  if(e.target.localName==="img"){
+  var btn = e.target.parentNode;
+  }else {var btn = e.target;}
+  console.log(e)
   var img = btn.querySelector("img").getAttribute("src");
   var title = btn.nextElementSibling.querySelector("h2").innerText;
   var description = btn.nextElementSibling.querySelector("p").getAttribute("data-text");

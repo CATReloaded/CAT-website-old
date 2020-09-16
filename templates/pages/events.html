@@ -25,10 +25,10 @@
         <div class="Events__event__content">
           <h2>{{event.name}}</h2>
           <span data-text="{{event.date}}">{{event.date|date:"M Y"}}</span>
-          <p data-text="{{event.description}}">{{ event.description|truncatechars:90 }}</p>
+          <p data-text="{{event.description}}">{{ event.description|truncatechars:80 }}</p>
         </div>
         <div class="Events__event__circle"></div>
-    </section>
+      </section>
     {% endfor %}
   </main>
 

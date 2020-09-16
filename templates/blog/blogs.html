@@ -60,7 +60,7 @@
       <section class="article">
         <img src="/media/{{article.image}}" alt="Article image">
         <h3>{{article.title}}</h3>
-        <p>{{ article.body|truncatechars:100 }}</p>
+        <p>{{ article.body|truncatechars:90 }}</p>
         <footer>
           {% if article.likes %}
             <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{article.likes}}</span>
@@ -73,8 +73,8 @@
       </section>
     {% endfor %}
     <!-- Paging -->
-    {% if page_obj.has_other_pages %}
       <footer>
+      {% if page_obj.has_other_pages %}
 
         {% if page_obj.has_previous %}
           <a href="?page={{ page_obj.previous_page_number }}"><button>&xlarr;</button></a>
@@ -93,9 +93,9 @@
         {% if users.has_next %}
           <a href="?page={{ page_obj.next_page_number }}"><button>&xrarr;</button></a>
         {% endif %}
+      {% endif %}
       
-      </footer>
-    {% endif %}
+    </footer>
 
   </main>
 

@@ -82,3 +82,6 @@ class Event(models.Model):
     def __str__(self):
         return self.name
     
+class EveImg(models.Model):
+    img = models.ImageField()
+    event = models.ForeignKey(Event,on_delete=models.CASCADE, related_name="images")
