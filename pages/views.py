@@ -2,13 +2,15 @@ from django.shortcuts import render
 from .models import *
 from django.shortcuts import get_object_or_404
 from blog.models import Article
+from django.core import serializers
 
 def home(request):
     circles = Circle.objects.all()
+    articles = serializers.serialize('json', Article.objects.all().order_by('-date')[:7])
     context = {
         'technical_circles':circles.filter(circle_type="technical"),
         'non_technical_circles' : circles.filter(circle_type="non-technical"),
-        'articles' : Article.objects.all().order_by('-date')[:3]
+        'articles' : articles
     }
     return render(request, 'pages/home.html', context)
 

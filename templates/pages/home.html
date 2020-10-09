@@ -71,9 +71,9 @@
     <section class="container blogs">
       <h2>Blogs</h2>
       <div class="blogs__content">
-        <button>&lt;</button>
+        <button class="blogs__prev">&lt;</button>
         
-        {% for article in articles %}
+        {% comment %} {% for article in articles %}
           <section class="article">
             <img src="/media/{{article.image}}" alt="Article image">
             <h3>{{article.title}}</h3>
@@ -88,17 +88,11 @@
               <a href="{% url 'single_blog' article.title %}">See More</a>
             </footer>
           </section>
-        {% endfor %}
+        {% endfor %} {% endcomment %}
         
-        <button>&gt;</button>
+        <button class="blogs__next">&gt;</button>
       </div>
-      <div class="blogs__controls">
-        <span></span>
-        <span></span>
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="blogs__controls"></div>
     </section>
     <!-- End Blogs -->
 
@@ -107,5 +101,7 @@
 {% endblock content %}
 
 {% block js %}
-  <script src="{% static 'js/navigation.js' %} "></script>
+  <script src="{% static 'js/navigation.js' %}"></script>
+  <script>const articles = JSON.parse("{{articles | escapejs}}");</script>
+  <script src="{% static 'js/homeBlogs.js' %}"></script>
 {% endblock js %}
