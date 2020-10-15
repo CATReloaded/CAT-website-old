@@ -47,7 +47,7 @@ class Member(models.Model):
     )
 
     name = models.CharField(max_length=30)
-    circle = models.ForeignKey(Circle,on_delete=models.CASCADE,related_name='members')
+    circle = models.ForeignKey(Circle,on_delete=models.CASCADE)
     role = models.CharField(max_length=10,choices=roles)
     image = models.ImageField(upload_to="members-pics")
     git = models.URLField(null=True,blank=True)
