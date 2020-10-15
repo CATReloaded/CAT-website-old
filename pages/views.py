@@ -29,8 +29,8 @@ def circle(request,circle):
     context = {
         'circle':circle,
         'leader':circle.leader,
-        'mentors':circle.mentors,
-        'members':circle.members
+        'mentors':circle.mentors.all(),
+        'members':circle.members.all()
     }
     return render(request, 'pages/circle.html', context)
 
