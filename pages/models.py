@@ -22,13 +22,6 @@ class Circle(models.Model):
     def leader(self):
         return self.members.get(role='leader')
 
-    @property
-    def mentors(self):
-        return self.members.filter(role='mentor')
-
-    @property
-    def members(self):
-        return self.members.filter(role='member')
 
     def __str__(self):
         return self.name
@@ -47,7 +40,7 @@ class Member(models.Model):
     )
 
     name = models.CharField(max_length=30)
-    circle = models.ForeignKey(Circle,on_delete=models.CASCADE)
+    circle = models.ForeignKey(Circle,on_delete=models.CASCADE, related_name = 'members')
     role = models.CharField(max_length=10,choices=roles)
     image = models.ImageField(upload_to="members-pics")
     git = models.URLField(null=True,blank=True)

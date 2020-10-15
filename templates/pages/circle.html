@@ -33,10 +33,11 @@
 
   <main>
     <!-- Start Mentors -->
-    {% if Mentors %}
+
+    {% if mentors %}
       <section class="container Circles__mentors">
         <h2>Mentors</h2>
-        {% for mentor in Mentors %}
+        {% for mentor in mentors %}
           <div>
             <img src="/media/{{mentor.image}}" alt="User avatar">
             <p>{{mentor.name}}</p>
@@ -44,6 +45,7 @@
         {% endfor %}
       </section>
     {% endif %}
+    
     <!-- End Mentors -->
 
     <!-- Start Members -->

@@ -6,7 +6,7 @@ from django.core import serializers
 
 def home(request):
     circles = Circle.objects.all()
-    articles = serializers.serialize('json', Article.objects.all().order_by('-date')[:7])
+    articles = Article.objects.all().order_by('-date')[:7]
     context = {
         'technical_circles':circles.filter(circle_type="technical"),
         'non_technical_circles' : circles.filter(circle_type="non-technical"),
@@ -29,9 +29,10 @@ def circle(request,circle):
     context = {
         'circle':circle,
         'leader':circle.leader,
-        'mentors':circle.mentors,
-        'members':circle.members
+        'mentors':circle.members.filter(role='mentor'),
+        'members':circle.members.filter(role='member')
     }
+    print(context)
     return render(request, 'pages/circle.html', context)
 
 def events(request):
