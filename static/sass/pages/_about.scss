@@ -1,0 +1,146 @@
+.About {
+  &__header {
+    position: relative;
+    padding: 16px;
+    background: url("../images/Qabilah.png") rgba(0, 0, 0, 0.588);
+    background-blend-mode: overlay;
+    min-height: calc(100vh - 98px);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white-color;
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      background-color: rgba(235, 1, 1, 0.22);
+      clip-path: polygon(50% 0%, 100% 100%, 50% 100%, 0% 0%, 0% 0%);
+    }
+    h1 {
+      text-align: center;
+      position: relative;
+      z-index: 3;
+
+      img {
+        width: 300px;
+        display: block;
+        @media screen and (max-width: 320px) {
+            width: 200px;
+        }
+      }
+
+      span {
+        font-weight: 300;
+      }
+    }
+
+    p {
+      position: relative;
+      z-index: 3;
+      margin-top: 24px;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    button {
+      position: relative;
+      z-index: 3;
+      background-color: $black-color;
+      color: $white-color;
+      padding: 16px;
+      border-radius: 20px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.541);
+      margin-top: 40px;
+    }
+  }
+
+  &__main {
+    &__mission {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 16px 7.5%;
+
+      &__overlay {
+        right: 0;
+        position: absolute;
+        width: 65%;
+        height: 100%;
+        margin-left: auto;
+        background: url("../images/about__background1.png") rgba(0, 0, 0, 0.588);
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+      }
+
+      &__content {
+        position: relative;
+        z-index: 3;
+        background-color: $white-color;
+        border-radius: 10px;
+        box-shadow: -10px -10px 15px $shadow-color;
+        padding: 100px 40px;
+        @media screen and (min-width: 600px) {
+            width: 50%;
+        }
+
+        h2 {
+          font-size: 40px;
+          margin-bottom: 32px;
+        }
+
+        p {
+          color: $text-color;
+        }
+      }
+    }
+
+    &__vision {
+      @extend .About__main__mission;
+      justify-content: flex-end;
+
+      &__overlay {
+        @extend .About__main__mission__overlay;
+        background-image: url("../images/about__background2.png");
+        right: unset;
+        left: 0;
+      }
+
+      &__content {
+        @extend .About__main__mission__content;
+        box-shadow: 10px 10px 15px $shadow-color;
+      }
+    }
+
+    &__followus {
+      background: url("../images/about__background3.png") rgba(0, 0, 0, 0.588);
+      background-blend-mode: overlay;
+      background-size: cover;
+      min-height: calc(100vh - 204px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 7.5%;
+      text-align: center;
+
+      &__content {
+        @extend .About__main__vision__content;
+
+        a {
+          &:not(:last-of-type) {
+            margin-right: 24px;
+          }
+
+          img {
+            width: 64px;
+            height: 64px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
   background-image: url("../images/background.png");
   background-position: 60vw 0;
   background-repeat: repeat-y;
-  header {
+  &__header {
     min-height: calc(100vh - 99px);
     height: calc(100vh - 99px);
     display: flex;

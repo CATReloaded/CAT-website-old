@@ -7,14 +7,7 @@ body {
   min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul {
+h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -49,14 +42,9 @@ a {
   src: url("../fonts/Segoe UI Bold.ttf");
   font-weight: 600;
 }
-body,
-button,
-input,
-textarea,
-select {
+body, button, input, textarea {
   font-family: "Segoe UI", sans-serif;
   font-weight: 300;
-  outline: 0.001px;
 }
 
 .Navbar {
@@ -74,7 +62,7 @@ select {
   column-gap: 16px;
   list-style: none;
 }
-@media screen and (max-width: 786px) {
+@media screen and (max-width: 720px) {
   .Navbar > ul {
     position: absolute;
     display: block;
@@ -86,7 +74,7 @@ select {
     transition: all 0.4s ease-in-out;
   }
   .Navbar > ul.active {
-    top: 98px;
+    top: 80px;
   }
 }
 .Navbar > ul > li {
@@ -101,20 +89,51 @@ select {
   color: #ffffff;
   font-weight: 600;
 }
-.Navbar > ul > li:hover,
-.Navbar > ul > li.active {
+.Navbar > ul > li:hover, .Navbar > ul > li.active {
   background-color: #ffffff;
 }
 .Navbar > ul > li:hover > a,
-.Navbar > ul > li:hover > button,
-.Navbar > ul > li.active > a,
+.Navbar > ul > li:hover > button, .Navbar > ul > li.active > a,
 .Navbar > ul > li.active > button {
   color: #000000;
+}
+.Navbar > ul > li ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  list-style: none;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 16px;
+  font-size: 14px;
+  transition: all 0.4s ease-in-out;
+}
+.Navbar > ul > li ul.active {
+  opacity: 1;
+  visibility: visible;
+}
+.Navbar > ul > li ul li:not(:last-of-type) {
+  margin-bottom: 8px;
+}
+.Navbar > ul > li ul li a {
+  display: flex;
+  align-items: center;
+  height: 15px;
+  color: #000000;
+  font-weight: 600;
+}
+.Navbar > ul > li ul li a img {
+  margin-right: 4px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #e70000;
+  border-radius: 50%;
 }
 .Navbar__hamburger-menu {
   padding: 5px;
 }
-@media screen and (min-width: 787px) {
+@media screen and (min-width: 721px) {
   .Navbar__hamburger-menu {
     display: none;
   }
@@ -152,7 +171,7 @@ select {
   background-color: #000000;
   padding-top: 16px;
   padding-bottom: 16px;
-  color: #cacaca;
+  color: #CACACA;
   font-size: 14px;
 }
 @media screen and (min-width: 875px) {
@@ -182,7 +201,7 @@ select {
   list-style-position: inside;
 }
 .Footer__discover-team ul a {
-  color: #cacaca;
+  color: #CACACA;
 }
 .Footer__location p {
   margin-top: 16px;
@@ -200,7 +219,7 @@ select {
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #cacaca;
+  background-color: #CACACA;
   border-radius: 50%;
 }
 .Footer__contact ul li a:hover {
@@ -221,7 +240,7 @@ select {
   margin-top: 16px;
 }
 .Footer > p a {
-  color: #cacaca;
+  color: #CACACA;
   margin-left: 8px;
 }
 
@@ -230,39 +249,39 @@ select {
   background-position: 60vw 0;
   background-repeat: repeat-y;
 }
-.Home header {
+.Home__header {
   min-height: calc(100vh - 99px);
   height: calc(100vh - 99px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: url("../images/ring-cat.png"), url("../images/t-shirt.png");
-  background-position: -36vw center, right center;
+  background-position: -45vw center, right center;
   background-size: 80%, contain;
   background-repeat: no-repeat;
   padding-top: 40px;
   padding-bottom: 40px;
 }
 @media screen and (max-width: 1020px) {
-  .Home header {
+  .Home__header {
     background: url("../images/ring-cat.png");
-    background-position: -36vw center;
+    background-position: -45vw center;
     background-size: 80%;
     background-repeat: no-repeat;
   }
 }
-.Home header p {
+.Home__header p {
   color: #707070;
   width: 40%;
   margin-top: 24px;
 }
 @media screen and (max-width: 1160px) {
-  .Home header p {
+  .Home__header p {
     width: 30%;
   }
 }
 @media screen and (max-width: 1020px) {
-  .Home header p {
+  .Home__header p {
     width: 80%;
   }
 }
@@ -388,18 +407,18 @@ select {
 .Home main .circles section > div p span {
   color: #e70000;
 }
-.Home main .circles section > div:nth-child(2n + 1) .image-wrapper::before {
+.Home main .circles section > div:nth-child(2n+1) .image-wrapper::before {
   bottom: -73px;
 }
-.Home main .circles section > div:nth-child(2n + 1) .image-wrapper:after {
+.Home main .circles section > div:nth-child(2n+1) .image-wrapper:after {
   top: -6px;
   border-top-left-radius: 99px;
   border-top-right-radius: 99px;
 }
-.Home main .circles section > div:nth-child(2n + 1) p {
+.Home main .circles section > div:nth-child(2n+1) p {
   grid-row: 3/4;
 }
-.Home main .circles section > div:nth-child(2n + 1) p::after {
+.Home main .circles section > div:nth-child(2n+1) p::after {
   bottom: 25px;
 }
 .Home main .circles section > div:nth-child(2n) .image-wrapper::before {
@@ -416,15 +435,15 @@ select {
 .Home main .circles section > div:nth-child(2n) p::after {
   top: 25px;
 }
-.Home main [class$="tech-circles"] {
+.Home main [class$=tech-circles] {
   overflow: hidden;
 }
-.Home main [class$="tech-circles"] h2 {
+.Home main [class$=tech-circles] h2 {
   margin: 40px 0;
   text-align: center;
   font-size: 2em;
 }
-.Home main [class$="tech-circles"] section {
+.Home main [class$=tech-circles] section {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: repeat(4, auto) 1fr;
@@ -432,40 +451,40 @@ select {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 870px) {
-  .Home main [class$="tech-circles"] section {
+  .Home main [class$=tech-circles] section {
     grid-template-columns: 1fr;
   }
 }
-.Home main [class$="tech-circles"] section img {
+.Home main [class$=tech-circles] section img {
   grid-row: 1/6;
   height: 280px;
   width: 100%;
 }
-.Home main [class$="tech-circles"] section:nth-child(odd) {
+.Home main [class$=tech-circles] section:nth-child(odd) {
   grid-template-columns: 1fr auto;
 }
-.Home main [class$="tech-circles"] section:nth-child(odd) img {
+.Home main [class$=tech-circles] section:nth-child(odd) img {
   grid-column: 2/3;
 }
 @media screen and (max-width: 870px) {
-  .Home main [class$="tech-circles"] section:nth-child(odd) {
+  .Home main [class$=tech-circles] section:nth-child(odd) {
     grid-template-columns: 1fr;
   }
-  .Home main [class$="tech-circles"] section:nth-child(odd) img {
+  .Home main [class$=tech-circles] section:nth-child(odd) img {
     grid-column: 1/2;
   }
 }
-.Home main [class$="tech-circles"] section h3 {
+.Home main [class$=tech-circles] section h3 {
   font-size: 1.5em;
   margin-bottom: 16px;
 }
-.Home main [class$="tech-circles"] section h4 {
+.Home main [class$=tech-circles] section h4 {
   margin: 24px 0 8px;
 }
-.Home main [class$="tech-circles"] section .leader-name {
+.Home main [class$=tech-circles] section .leader-name {
   font-size: 14px;
 }
-.Home main [class$="tech-circles"] section a {
+.Home main [class$=tech-circles] section a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -479,7 +498,7 @@ select {
   margin-top: 24px;
   transition: all 0.4s ease-in-out;
 }
-.Home main [class$="tech-circles"] section a:hover {
+.Home main [class$=tech-circles] section a:hover {
   color: #ffffff;
   background-color: #e70000;
 }
@@ -517,11 +536,6 @@ select {
   font-weight: 600;
   font-size: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.161);
-  transition: all 0.3s ease-in-out;
-}
-.Home main .blogs__content > button:hover {
-  background-color: #e70000;
-  color: #ffffff;
 }
 .Home main .blogs__content section {
   margin: 0 16px;
@@ -575,8 +589,7 @@ select {
   margin: 0 auto 10px;
   background-color: #e70000;
 }
-.Events::after,
-.Events::before {
+.Events::after, .Events::before {
   position: absolute;
   content: "";
   width: 30px;
@@ -724,8 +737,7 @@ select {
     text-align: left;
   }
 }
-.Events__event__content::after,
-.Events__event__content::before {
+.Events__event__content::after, .Events__event__content::before {
   position: absolute;
   content: "";
   width: 50px;
@@ -734,8 +746,7 @@ select {
   top: -15px;
 }
 @media screen and (max-width: 530px) {
-  .Events__event__content::after,
-  .Events__event__content::before {
+  .Events__event__content::after, .Events__event__content::before {
     display: none;
   }
 }
@@ -937,67 +948,56 @@ select {
   background-repeat: repeat-y;
   margin-bottom: 40px;
 }
-.Members__founders,
-.Members__team {
+.Members__founders, .Members__team {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
 }
 @media screen and (max-width: 900px) {
-  .Members__founders,
-  .Members__team {
+  .Members__founders, .Members__team {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 610px) {
-  .Members__founders,
-  .Members__team {
+  .Members__founders, .Members__team {
     grid-template-columns: 1fr;
   }
 }
-.Members__founders h2,
-.Members__team h2 {
+.Members__founders h2, .Members__team h2 {
   margin: 40px 0 0;
   font-size: 2em;
 }
 @media screen and (min-width: 899px) {
-  .Members__founders h2,
-  .Members__team h2 {
+  .Members__founders h2, .Members__team h2 {
     grid-column: 1/4;
   }
 }
 @media screen and (min-width: 609px) and (max-width: 900px) {
-  .Members__founders h2,
-  .Members__team h2 {
+  .Members__founders h2, .Members__team h2 {
     grid-column: 1/3;
   }
 }
-.Members__founders div,
-.Members__team div {
+.Members__founders div, .Members__team div {
   display: grid;
   grid-template-columns: 136px 1fr;
   grid-template-rows: 1fr auto 1fr;
   grid-gap: 8px 16px;
   align-items: flex-end;
 }
-.Members__founders div > img,
-.Members__team div > img {
+.Members__founders div > img, .Members__team div > img {
   grid-row: 1/4;
   width: 130px;
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
 }
-.Members__founders div:nth-of-type(2n) > img,
-.Members__team div:nth-of-type(2n) > img {
+.Members__founders div:nth-of-type(2n) > img, .Members__team div:nth-of-type(2n) > img {
   border: 3px solid #707070;
 }
-.Members__founders div:nth-of-type(2n + 1) > img,
-.Members__team div:nth-of-type(2n + 1) > img {
+.Members__founders div:nth-of-type(2n + 1) > img, .Members__team div:nth-of-type(2n + 1) > img {
   border: 3px solid #e70000;
 }
-.Members__founders div p,
-.Members__team div p {
+.Members__founders div p, .Members__team div p {
   color: #707070;
   font-size: 18px;
   overflow: hidden;
@@ -1006,24 +1006,20 @@ select {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.Members__founders div span,
-.Members__team div span {
+.Members__founders div span, .Members__team div span {
   color: #707070;
   font-size: 14px;
 }
-.Members__founders div ul,
-.Members__team div ul {
+.Members__founders div ul, .Members__team div ul {
   list-style: none;
   display: flex;
   align-self: flex-start;
 }
-.Members__founders div ul li img,
-.Members__team div ul li img {
+.Members__founders div ul li img, .Members__team div ul li img {
   width: 20px;
   height: 20px;
 }
-.Members__founders div ul li:not(:last-of-type),
-.Members__team div ul li:not(:last-of-type) {
+.Members__founders div ul li:not(:last-of-type), .Members__team div ul li:not(:last-of-type) {
   margin-right: 4px;
 }
 @media screen and (min-width: 899px) {
@@ -1074,8 +1070,7 @@ select {
   height: 380px;
   border-radius: 20px;
 }
-.Circles header > .image-wrapper::after,
-.Circles header > .image-wrapper::before {
+.Circles header > .image-wrapper::after, .Circles header > .image-wrapper::before {
   position: absolute;
   content: "";
   width: 40%;
@@ -1124,8 +1119,7 @@ select {
   object-fit: cover;
   border-radius: 10px;
 }
-.Circles header .leader .image-wrapper::after,
-.Circles header .leader .image-wrapper::before {
+.Circles header .leader .image-wrapper::after, .Circles header .leader .image-wrapper::before {
   position: absolute;
   content: "";
   width: 50%;
@@ -1221,25 +1215,21 @@ select {
   text-align: center;
   margin: 40px 0;
 }
-.Circles__members div {
+.Circles__members > div {
   margin: 24px;
 }
-.Circles__members div img {
+.Circles__members > div img {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border: 2px solid #e70000;
   border-radius: 50%;
 }
-.Circles__members div p {
+.Circles__members > div > div {
   position: relative;
-  display: flex;
-  align-items: center;
   padding: 8px;
   box-sizing: border-box;
-  justify-content: center;
   width: 140px;
-  height: 40px;
   background-color: #ffffff;
   font-weight: 600;
   border-radius: 30px;
@@ -1247,6 +1237,19 @@ select {
   top: -20px;
   z-index: 3;
   text-align: center;
+}
+.Circles__members > div > div div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Circles__members > div > div div a:not(:last-of-type) {
+  margin-right: 4px;
+}
+.Circles__members > div > div div img {
+  width: 16px;
+  height: 16px;
+  border: 0;
 }
 
 .Blogs {
@@ -1261,22 +1264,13 @@ select {
   /* Search input */
   /* Select box */
 }
-.Blogs header h1 {
-  font-size: 2em;
-}
-.Blogs header form {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
 @media screen and (max-width: 1100px) {
   .Blogs header {
     flex-direction: column;
   }
-  .Blogs header form {
-    margin-left: 0;
-    flex-direction: column;
-  }
+}
+.Blogs header h1 {
+  font-size: 2em;
 }
 .Blogs header input {
   width: 222px;
@@ -1313,31 +1307,14 @@ select {
     margin: 16px 0 8px 0;
   }
 }
-.Blogs header div {
-  position: relative;
-}
 .Blogs header select {
   color: #707070;
   height: 36px;
   border: 0;
   border-radius: 20px;
   font-size: 14px;
-  padding: 0 32px 0 16px;
+  padding: 0 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  appearance: none;
-}
-.Blogs header div::before {
-  position: absolute;
-  content: "\025BE";
-  top: 50%;
-  transform: translateY(-50%);
-  right: 4px;
-  width: 20%;
-  text-align: center;
-  font-size: 28px;
-  line-height: 45px;
-  color: #707070;
-  pointer-events: none;
 }
 .Blogs main {
   display: grid;
@@ -1446,35 +1423,27 @@ select {
 .Blog > div aside .article img {
   border-radius: 20px;
 }
-.Blog > div aside .article:first-of-type,
-.Blog > div aside .article:last-of-type {
+.Blog > div aside .article:first-of-type, .Blog > div aside .article:last-of-type {
   position: relative;
 }
-.Blog > div aside .article:first-of-type::after,
-.Blog > div aside .article:first-of-type::before,
-.Blog > div aside .article:last-of-type::after,
-.Blog > div aside .article:last-of-type::before {
+.Blog > div aside .article:first-of-type::after, .Blog > div aside .article:first-of-type::before, .Blog > div aside .article:last-of-type::after, .Blog > div aside .article:last-of-type::before {
   position: absolute;
   content: "";
   background-color: #e70000;
 }
-.Blog > div aside .article:first-of-type::after,
-.Blog > div aside .article:last-of-type::after {
+.Blog > div aside .article:first-of-type::after, .Blog > div aside .article:last-of-type::after {
   width: 50%;
   height: 5px;
 }
-.Blog > div aside .article:first-of-type::before,
-.Blog > div aside .article:last-of-type::before {
+.Blog > div aside .article:first-of-type::before, .Blog > div aside .article:last-of-type::before {
   height: 50%;
   width: 5px;
 }
-.Blog > div aside .article:first-of-type::after,
-.Blog > div aside .article:first-of-type::before {
+.Blog > div aside .article:first-of-type::after, .Blog > div aside .article:first-of-type::before {
   top: -8px;
   right: -8px;
 }
-.Blog > div aside .article:last-of-type::after,
-.Blog > div aside .article:last-of-type::before {
+.Blog > div aside .article:last-of-type::after, .Blog > div aside .article:last-of-type::before {
   bottom: -8px;
   left: -8px;
 }
@@ -1637,7 +1606,7 @@ select {
 }
 .Blog__comments form button:hover {
   background-color: #e70000;
-  color: #cacaca;
+  color: #CACACA;
 }
 @media screen and (min-width: 786px) {
   .Blog__comments form button {
@@ -1756,6 +1725,129 @@ select {
   margin-right: 24px;
 }
 
+.About__header {
+  position: relative;
+  padding: 16px;
+  background: url("../images/Qabilah.png") rgba(0, 0, 0, 0.588);
+  background-blend-mode: overlay;
+  min-height: calc(100vh - 98px);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.About__header__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background-color: rgba(235, 1, 1, 0.22);
+  clip-path: polygon(50% 0%, 100% 100%, 50% 100%, 0% 0%, 0% 0%);
+}
+.About__header h1 {
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.About__header h1 img {
+  width: 300px;
+  display: block;
+}
+@media screen and (max-width: 320px) {
+  .About__header h1 img {
+    width: 200px;
+  }
+}
+.About__header h1 span {
+  font-weight: 300;
+}
+.About__header p {
+  position: relative;
+  z-index: 3;
+  margin-top: 24px;
+  max-width: 350px;
+  text-align: center;
+}
+.About__header button {
+  position: relative;
+  z-index: 3;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 20px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.541);
+  margin-top: 40px;
+}
+.About__main__mission, .About__main__vision {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 16px 7.5%;
+}
+.About__main__mission__overlay, .About__main__vision__overlay {
+  right: 0;
+  position: absolute;
+  width: 65%;
+  height: 100%;
+  margin-left: auto;
+  background: url("../images/about__background1.png") rgba(0, 0, 0, 0.588);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+}
+.About__main__mission__content, .About__main__vision__content, .About__main__followus__content {
+  position: relative;
+  z-index: 3;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: -10px -10px 15px rgba(0, 0, 0, 0.161);
+  padding: 100px 40px;
+}
+@media screen and (min-width: 600px) {
+  .About__main__mission__content, .About__main__vision__content, .About__main__followus__content {
+    width: 50%;
+  }
+}
+.About__main__mission__content h2, .About__main__vision__content h2, .About__main__followus__content h2 {
+  font-size: 40px;
+  margin-bottom: 32px;
+}
+.About__main__mission__content p, .About__main__vision__content p, .About__main__followus__content p {
+  color: #707070;
+}
+.About__main__vision {
+  justify-content: flex-end;
+}
+.About__main__vision__overlay {
+  background-image: url("../images/about__background2.png");
+  right: unset;
+  left: 0;
+}
+.About__main__vision__content, .About__main__followus__content {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.161);
+}
+.About__main__followus {
+  background: url("../images/about__background3.png") rgba(0, 0, 0, 0.588);
+  background-blend-mode: overlay;
+  background-size: cover;
+  min-height: calc(100vh - 204px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 7.5%;
+  text-align: center;
+}
+.About__main__followus__content a:not(:last-of-type) {
+  margin-right: 24px;
+}
+.About__main__followus__content a img {
+  width: 64px;
+  height: 64px;
+}
+
 .article {
   display: flex;
   flex-direction: column;
@@ -1765,9 +1857,6 @@ select {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.161);
   color: #ffffff;
   padding: 24px;
-  overflow: hidden;
-  z-index: 2;
-  border-radius: 30px;
 }
 .article > img {
   position: absolute;
@@ -1778,16 +1867,9 @@ select {
   z-index: -1;
   mix-blend-mode: overlay;
   object-fit: cover;
-  transition: all 0.3s ease-in-out;
-}
-.article:hover > img {
-  transform: scale(1.1);
 }
 .article h3 {
   font-size: 1em;
-}
-.article h3 a {
-  color: #ffffff;
 }
 .article p {
   margin-top: 16px;
@@ -1797,8 +1879,14 @@ select {
   display: flex;
   align-items: center;
 }
-.article footer p {
-  margin-top: 0;
+.article footer span {
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+}
+.article footer span img {
+  width: 12px;
+  margin-right: 4px;
 }
 .article footer a {
   margin-left: auto;
