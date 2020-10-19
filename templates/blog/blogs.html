@@ -28,12 +28,14 @@
       <input type="search" name="search" id="search" placeholder="Search">
       <!-- Start Select Category -->
       <p>CATEGORIES</p>
-      <select name="blog-category">
-        <option value="" selected disabled> Select Category </option>
-        {%for category in categories %}
-          <option value="{{category.id}}">{{category.name}}</option>
-        {% endfor %}
-      </select>
+      <div>
+        <select name="blog-category">
+          <option value="" selected disabled> Select Category </option>
+          {%for category in categories %}
+            <option value="{{category.id}}">{{category.name}}</option>
+          {% endfor %}
+        </select>
+      </div>
       {% comment %} <input type="submit" value="search"> {% endcomment %}
     </form>
 
@@ -59,15 +61,10 @@
     {% for article in page_obj %}
       <section class="article">
         <img src="/media/{{article.image}}" alt="Article image">
-        <h3>{{article.title}}</h3>
+        <h3><a href="{% url 'single_blog' article.title %}">{{article.title}}</a></h3>
         <p>{{ article.body|truncatechars:90 }}</p>
         <footer>
-          {% if article.likes %}
-            <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{article.likes}}</span>
-          {% endif %}
-          {% if article.comments_num %}
-            <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">{{article.comments_num}}</span>
-          {% endif %}
+          <p>{{ article.category }}</p>
           <a href="{% url 'single_blog' article.title %}">See More</a>
         </footer>
       </section>

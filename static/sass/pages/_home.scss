@@ -328,6 +328,7 @@
           height: 8px;
           border: 1px solid $main-color;
           border-radius: 13px;
+          cursor: pointer;
           &:not(:last-of-type) {
             margin-right: 24px;
           }

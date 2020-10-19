@@ -10,6 +10,7 @@ def home(request):
     context = {
         'technical_circles':circles.filter(circle_type="technical"),
         'non_technical_circles' : circles.filter(circle_type="non-technical"),
+        'circles': circles,
         'articles' : articles
     }
     return render(request, 'pages/home.html', context)

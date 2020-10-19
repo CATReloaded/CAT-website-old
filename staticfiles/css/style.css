@@ -52,9 +52,11 @@ a {
 body,
 button,
 input,
-textarea {
+textarea,
+select {
   font-family: "Segoe UI", sans-serif;
   font-weight: 300;
+  outline: 0.001px;
 }
 
 .Navbar {
@@ -72,7 +74,7 @@ textarea {
   column-gap: 16px;
   list-style: none;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 786px) {
   .Navbar > ul {
     position: absolute;
     display: block;
@@ -84,7 +86,7 @@ textarea {
     transition: all 0.4s ease-in-out;
   }
   .Navbar > ul.active {
-    top: 80px;
+    top: 98px;
   }
 }
 .Navbar > ul > li {
@@ -109,43 +111,10 @@ textarea {
 .Navbar > ul > li.active > button {
   color: #000000;
 }
-.Navbar > ul > li ul {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  list-style: none;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
-  padding: 16px;
-  font-size: 14px;
-  transition: all 0.4s ease-in-out;
-}
-.Navbar > ul > li ul.active {
-  opacity: 1;
-  visibility: visible;
-}
-.Navbar > ul > li ul li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-.Navbar > ul > li ul li a {
-  display: flex;
-  align-items: center;
-  height: 15px;
-  color: #000000;
-  font-weight: 600;
-}
-.Navbar > ul > li ul li a img {
-  margin-right: 4px;
-  width: 15px;
-  height: 15px;
-  border: 1px solid #e70000;
-  border-radius: 50%;
-}
 .Navbar__hamburger-menu {
   padding: 5px;
 }
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 787px) {
   .Navbar__hamburger-menu {
     display: none;
   }
@@ -268,7 +237,7 @@ textarea {
   flex-direction: column;
   justify-content: center;
   background: url("../images/ring-cat.png"), url("../images/t-shirt.png");
-  background-position: -45vw center, right center;
+  background-position: -36vw center, right center;
   background-size: 80%, contain;
   background-repeat: no-repeat;
   padding-top: 40px;
@@ -277,7 +246,7 @@ textarea {
 @media screen and (max-width: 1020px) {
   .Home header {
     background: url("../images/ring-cat.png");
-    background-position: -45vw center;
+    background-position: -36vw center;
     background-size: 80%;
     background-repeat: no-repeat;
   }
@@ -548,6 +517,11 @@ textarea {
   font-weight: 600;
   font-size: 20px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.161);
+  transition: all 0.3s ease-in-out;
+}
+.Home main .blogs__content > button:hover {
+  background-color: #e70000;
+  color: #ffffff;
 }
 .Home main .blogs__content section {
   margin: 0 16px;
@@ -1068,7 +1042,7 @@ textarea {
 
 .Circles header {
   background: url("../images/ring-cat.png") no-repeat;
-  background-position: -45vw center;
+  background-position: -36vw center;
   background-size: 80%;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -1308,14 +1282,31 @@ textarea {
     margin: 16px 0 8px 0;
   }
 }
+.Blogs header div {
+  position: relative;
+}
 .Blogs header select {
   color: #707070;
   height: 36px;
   border: 0;
   border-radius: 20px;
   font-size: 14px;
-  padding: 0 16px;
+  padding: 0 32px 0 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  appearance: none;
+}
+.Blogs header div::before {
+  position: absolute;
+  content: "\025BE";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4px;
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: #707070;
+  pointer-events: none;
 }
 .Blogs main {
   display: grid;
@@ -1722,6 +1713,9 @@ textarea {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.161);
   color: #ffffff;
   padding: 24px;
+  overflow: hidden;
+  z-index: 2;
+  border-radius: 30px;
 }
 .article > img {
   position: absolute;
@@ -1732,9 +1726,16 @@ textarea {
   z-index: -1;
   mix-blend-mode: overlay;
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.article:hover > img {
+  transform: scale(1.1);
 }
 .article h3 {
   font-size: 1em;
+}
+.article h3 a {
+  color: #ffffff;
 }
 .article p {
   margin-top: 16px;
@@ -1744,14 +1745,8 @@ textarea {
   display: flex;
   align-items: center;
 }
-.article footer span {
-  margin-right: 16px;
-  display: flex;
-  align-items: center;
-}
-.article footer span img {
-  width: 12px;
-  margin-right: 4px;
+.article footer p {
+  margin-top: 0;
 }
 .article footer a {
   margin-left: auto;

@@ -9,24 +9,12 @@ let articleIndex = 1;
 const blog = ({
   image,
   body,
-  likes,
-  comments_num,
   title,
 }) => `<img src="/media/${image}" alt="Article image">
-            <h3>${title}</h3>
+            <h3><a href="/blogs/single_blog/${title}">${title}</a></h3>
             <p>${body}</p>
             <footer>
-              ${
-                likes
-                  ? `<span class="blogs__content__likes"><img src="/static/images/heart.svg" alt="like icon">${likes}</span>`
-                  : ""
-              }
-              ${
-                comments_num
-                  ? `<span class="blogs__content__comments"><img src="/static/images/comment.svg" alt="comment icon">${comments_num}</span>`
-                  : ""
-              }
-              <a href="{% url 'single_blog' article.title %}">See More</a>
+              <a href="/blogs/single_blog/${title}">See More</a>
             </footer>`;
 
 // Blogs controls
