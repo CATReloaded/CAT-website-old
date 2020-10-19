@@ -8,6 +8,10 @@
   color: $white-color;
   padding: 24px;
   border-radius: 20px;
+  transition: $transition;
+  &:hover {
+    background-color: rgba($color: $black-color, $alpha: 0.4);
+  }
 
   a {
     color: $white-color;
@@ -37,19 +41,17 @@
     display: flex;
     align-items: center;
 
-    span {
+    p {
+      margin-top: 0;
       margin-right: 16px;
       display: flex;
       align-items: center;
 
       img {
         width: 12px;
+        height: 12px;
         margin-right: 4px;
       }
-    }
-
-    p {
-      margin-top: 0;
     }
 
     a {

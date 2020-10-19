@@ -64,7 +64,7 @@
         <h3><a href="{% url 'single_blog' article.title %}">{{article.title}}</a></h3>
         <p>{{ article.body|truncatechars:90 }}</p>
         <footer>
-          <p>{{ article.category }}</p>
+          <p><img src=" {% static 'images/category.svg' %}" alt="Category icon">{{ article.category }}</p>
           <a href="{% url 'single_blog' article.title %}">See More</a>
         </footer>
       </section>

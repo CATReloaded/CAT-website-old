@@ -15,7 +15,7 @@ const blog = ({
             <h3><a href="/blogs/single_blog/${title}">${title}</a></h3>
             <p>${body}</p>
             <footer>
-              <p>${category}</p>
+              <p><img src="/static/images/category.svg" alt="Category icon">${category}</p>
               <a href="/blogs/single_blog/${title}">See More</a>
             </footer>`;
 

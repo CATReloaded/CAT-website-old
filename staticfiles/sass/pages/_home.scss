@@ -301,6 +301,11 @@
           font-weight: 600;
           font-size: 20px;
           box-shadow: 10px 10px 20px $shadow-color;
+          transition: $transition;
+          &:hover {
+            background-color: $main-color;
+            color: $white-color;
+          }
         }
 
         section {
