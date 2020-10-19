@@ -7,6 +7,11 @@
   box-shadow: 20px 20px 30px $shadow-color;
   color: $white-color;
   padding: 24px;
+  border-radius: 20px;
+
+  a {
+    color: $white-color;
+  }
 
   > img {
     position: absolute;
@@ -41,6 +46,10 @@
         width: 12px;
         margin-right: 4px;
       }
+    }
+
+    p {
+      margin-top: 0;
     }
 
     a {

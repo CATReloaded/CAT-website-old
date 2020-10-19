@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -42,9 +43,10 @@ a {
   src: url("../fonts/Segoe UI Bold.ttf");
   font-weight: 600;
 }
-body, button, input, textarea {
+body, button, input, textarea, select {
   font-family: "Segoe UI", sans-serif;
   font-weight: 300;
+  outline: 0.001px;
 }
 
 .Navbar {
@@ -1272,6 +1274,17 @@ body, button, input, textarea {
 .Blogs header h1 {
   font-size: 2em;
 }
+.Blogs header form {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 1100px) {
+  .Blogs header form {
+    margin-left: 0;
+    flex-direction: column;
+  }
+}
 .Blogs header input {
   width: 222px;
   height: 36px;
@@ -1307,14 +1320,31 @@ body, button, input, textarea {
     margin: 16px 0 8px 0;
   }
 }
-.Blogs header select {
+.Blogs header div {
+  position: relative;
+}
+.Blogs header div select {
   color: #707070;
   height: 36px;
   border: 0;
   border-radius: 20px;
   font-size: 14px;
-  padding: 0 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  padding: 0 32px 0 16px;
+  appearance: none;
+}
+.Blogs header div::before {
+  position: absolute;
+  content: "▾";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4px;
+  width: 20%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: #707070;
+  pointer-events: none;
 }
 .Blogs main {
   display: grid;
@@ -1339,6 +1369,9 @@ body, button, input, textarea {
 .Blogs main .article {
   width: 100%;
   box-sizing: border-box;
+}
+.Blogs main .article a {
+  color: #ffffff;
 }
 .Blogs main > footer {
   margin: 0 auto;
@@ -1857,6 +1890,10 @@ body, button, input, textarea {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.161);
   color: #ffffff;
   padding: 24px;
+  border-radius: 20px;
+}
+.article a {
+  color: #ffffff;
 }
 .article > img {
   position: absolute;
@@ -1887,6 +1924,9 @@ body, button, input, textarea {
 .article footer span img {
   width: 12px;
   margin-right: 4px;
+}
+.article footer p {
+  margin-top: 0;
 }
 .article footer a {
   margin-left: auto;
