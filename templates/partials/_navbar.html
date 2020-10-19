@@ -13,6 +13,11 @@
       	{% endif %} >
       	<a href="{% url 'home' %}">Home</a>
       </li>
+      <li {% if '/about/' == request.path %}
+          class="active"
+         {% endif %}>
+        <a href="{% url 'blogs' %}">About</a>
+      </li>
       <li {% if  request.path == '/blogs/'  %}
           class="active"
 			 {% else %} 
@@ -34,9 +39,6 @@
           class="active"
          {% endif %} >
       <a href="{% url 'rewards' %}">Hall Of Fame</a>
-      </li>
-      <li>
-        <a href="{% url 'rewards' %}">About Us</a>
       </li>
     </ul>
     <!-- Navigation hamburger menu for responsive -->
