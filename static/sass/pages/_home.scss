@@ -2,7 +2,7 @@
   background-image: url("../images/background.png");
   background-position: 60vw 0;
   background-repeat: repeat-y;
-  header {
+  &__header {
     min-height: calc(100vh - 99px);
     height: calc(100vh - 99px);
     display: flex;
@@ -301,6 +301,11 @@
           font-weight: 600;
           font-size: 20px;
           box-shadow: 10px 10px 20px $shadow-color;
+          transition: $transition;
+          &:hover {
+            background-color: $main-color;
+            color: $white-color;
+          }
         }
 
         section {
@@ -328,6 +333,7 @@
           height: 8px;
           border: 1px solid $main-color;
           border-radius: 13px;
+          cursor: pointer;
           &:not(:last-of-type) {
             margin-right: 24px;
           }

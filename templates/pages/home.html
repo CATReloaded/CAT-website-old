@@ -4,7 +4,7 @@
 
 {% block content %}
 <!-- Start Header -->
-  <header class="container">
+  <header class="container Home__header">
     <h1>CAT Reloaded</h1>
     <p>CAT" is a non-profit foundation focused on" Computer Science and IT specially Open Source technologies CAT's
       primary
@@ -71,26 +71,9 @@
     <section class="container blogs">
       <h2>Blogs</h2>
       <div class="blogs__content">
-        <button class="blogs__prev">&lt;</button>
-        
-        {% comment %} {% for article in articles %}
-          <section class="article">
-            <img src="/media/{{article.image}}" alt="Article image">
-            <h3>{{article.title}}</h3>
-            <p>{{ article.body|truncatechars:100 }}</p>
-            <footer>
-              {% if article.likes %}
-                <span class="blogs__content__likes"><img src=" {% static 'images/heart.svg' %}" alt="like icon">{{article.likes}}</span>
-              {% endif %}
-              {% if article.comments_num %}
-                <span class="blogs__content__comments"><img src=" {% static 'images/comment.svg' %}" alt="comment icon">{{article.comments_num}}</span>
-              {% endif %}
-              <a href="{% url 'single_blog' article.title %}">See More</a>
-            </footer>
-          </section>
-        {% endfor %} {% endcomment %}
-        
-        <button class="blogs__next">&gt;</button>
+        <button class="blogs__prev">&lsaquo;</button>
+        {% comment %} Articles {% endcomment %}
+        <button class="blogs__next">&rsaquo;</button>
       </div>
       <div class="blogs__controls"></div>
     </section>

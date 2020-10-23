@@ -27,6 +27,7 @@
       </div>
       <h2>Leader</h2>
       <p>{{circle.leader.name}}</p>
+      <a href="https://github.com/"> Show road-map </a>
     </div>
   </header>
   <!-- End Header -->
@@ -55,7 +56,31 @@
         {% for member in members %}
           <div>
             <img src="/media/{{member.image}}"alt="User avatar">
-            <p>{{member.name}}</p>
+            <div>
+              <p>{{member.name}}</p>
+              <div>
+                {% if member.facebook %}
+                  <a href={{member.facebook}}>
+                    <img src="{%static '/images/facebook-red.svg' %}" alt="Facebook icon" />
+                  </a>
+                {% endif %}
+                {% if member.twitter %}
+                  <a href={{member.twitter}}>
+                    <img src="{%static '/images/twitter-red.svg' %}" alt="Twitter icon" />
+                  </a>
+                {% endif %}
+                {% if member.linked_in %}
+                  <a href={{member.linked_in}}>
+                    <img src="{%static '/images/linkedin-red.svg' %}" alt="Linkedin icon" />
+                  </a>
+                {% endif %}
+                {% if member.git %}
+                  <a href={{member.git}}>
+                    <img src="{%static '/images/github-red.svg' %}" alt="Github icon" />
+                  </a>
+                {% endif %}
+              </div>
+            </div>
           </div>
         {% endfor %}
       </section>

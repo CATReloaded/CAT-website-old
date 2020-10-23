@@ -6,10 +6,11 @@ from django.core import serializers
 
 def home(request):
     circles = Circle.objects.all()
-    articles = Article.objects.all().order_by('-date')[:7]
+    articles = serializers.serialize('json', Article.objects.all().order_by('-date')[:7])
     context = {
         'technical_circles':circles.filter(circle_type="technical"),
         'non_technical_circles' : circles.filter(circle_type="non-technical"),
+        'circles': circles,
         'articles' : articles
     }
     return render(request, 'pages/home.html', context)
@@ -46,3 +47,6 @@ def rewards(request):
         "circle_rewards" : Reward.objects.all()
     }
     return render(request, 'pages/rewards.html', context)
+
+def about(request):
+    return render(request, 'pages/about.html')

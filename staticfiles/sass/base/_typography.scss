@@ -10,7 +10,8 @@
   font-weight: 600;
 }
 
-body, button, input, textarea {
+body, button, input, textarea, select {
   font-family: "Segoe UI", sans-serif;
   font-weight: 300;
+  outline: 0.001px;
 }

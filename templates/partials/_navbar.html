@@ -13,6 +13,11 @@
       	{% endif %} >
       	<a href="{% url 'home' %}">Home</a>
       </li>
+      <li {% if '/about/' == request.path %}
+          class="active"
+         {% endif %}>
+        <a href="{% url 'about' %}">About</a>
+      </li>
       <li {% if  request.path == '/blogs/'  %}
           class="active"
 			 {% else %} 
@@ -33,20 +38,7 @@
       <li  {% if '/rewards/' == request.path %}
           class="active"
          {% endif %} >
-      <a href="{% url 'rewards' %}">Rewards</a>
-      </li>
-      <li>
-        <button class="contact">Contact &#x025BE;</button>
-        <ul>
-          <li><a href="https://www.facebook.com/CATReloaded"><img src="{% static 'images/facebook.svg' %}"
-                alt="Facebook page">Facebook</a></li>
-          <li><a href="https://twitter.com/CATReloaded"><img src="{% static 'images/twitter.svg' %}"
-                alt="Twitter account">Twitter</a></li>
-          <li><a href="https://www.linkedin.com/company/cat-reloaded/"><img src="{% static 'images/linkedin.svg' %}"
-                alt="Linkedin profile">Linkedin</a></li>
-          <li><a href="mailto:catreloaded-community@googlegroups.com"><img src="{% static 'images/google+.svg' %}"
-                alt="Google+ mail">Google+</a></li>
-        </ul>
+      <a href="{% url 'rewards' %}">Hall Of Fame</a>
       </li>
     </ul>
     <!-- Navigation hamburger menu for responsive -->

@@ -1,0 +1,67 @@
+{% extends "_base.html" %} {% load static %} {% block title %} About CAT
+{%endblock title %} {% block content %}
+<header class="About__header">
+  <div class="About__header__overlay"></div>
+  <h1>
+    <img src="{% static '/images/About__logo.svg' %}" alt="CAT logo" />
+    CAT <span>Reloaded</span>
+  </h1>
+  <p>
+    CAT "is a non-profit foundation focused on" Computer Science and IT
+    specially Open Source technologies
+  </p>
+  <button>Our Members</button>
+</header>
+<main class="About__main">
+  <!-- Mission -->
+  <section class="About__main__mission">
+    <div class="About__main__mission__overlay"></div>
+    <div class="About__main__mission__content">
+      <h2 class="h1">Our Mission</h2>
+      <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+        Ipsum has
+        been the industry's standard dummy when an unknown printer. unknown printer text of the printing typesetting
+        dolor
+        industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer.standard dummy when an
+        unknown
+        printer. unknown printer text of the printing</p>
+    </div>
+  </section>
+
+  <!-- Vison -->
+  <section class="About__main__vision">
+    <div class="About__main__vision__overlay"></div>
+    <div class="About__main__vision__content">
+      <h2>Our Vision</h2>
+      <p>Lorem Ipsum is simply dummy dolor unknown printer text of the printing and typesetting dolor industry. Lorem
+        Ipsum has
+        been the industry's standard dummy when an unknown printer. unknown printer text of the printing typesetting
+        dolor
+        industry. Lorem Ipsum has been the industry's standard dummy when an unknown printer.standard dummy when an
+        unknown
+        printer. unknown printer text of the printing</p>
+    </div>
+  </section>
+
+  <!-- Follow US -->
+  <section class="About__main__followus">
+    <div class="About__main__followus__content">
+      <h2>Follow Us</h2>
+      <a href="https://www.facebook.com/CATReloaded" target="_blank"><img src="{% static 'images/facebook-big.svg' %}"
+          alt="Facebook page"></a>
+      <a href="https://twitter.com/CATReloaded"><img src="{% static 'images/twitter-big.svg' %}"
+          alt="Twitter account"></a>
+  
+      <a href="https://www.instagram.com/catreloaded/?hl=en"><img src="{% static 'images/instagram-big.svg' %}"
+          alt="Instagram account"></a>
+      <a href="https://www.youtube.com/channel/UCJaNoxBopnEOli2mI7PTlgg"><img src="{% static 'images/youtube-big.svg' %}"
+          alt="Youtube channel"></a>
+      <a href="https://www.linkedin.com/company/cat-reloaded/"><img src="{% static 'images/linkedin-big.svg' %}"
+          alt="Linkedin profile"></a>
+    </div>
+  </section>
+</main>
+
+{% endblock content %} {% block js %}
+<script src="{% static 'js/navigation.js' %}"></script>
+{% endblock js %}
