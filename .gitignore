@@ -142,3 +142,4 @@ cython_debug/
 .directory
 .vscode
 .vscode/*
+media/
