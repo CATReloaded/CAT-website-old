@@ -28,7 +28,10 @@ function get_data(e) {
   var date = btn.nextElementSibling
     .querySelector("span")
     .getAttribute("data-text");
-  return [img, title, description, date, imgs];
+  var link = btn.parentNode
+    .querySelector("#link")
+    .getAttribute("data-text");
+  return [img, title, description, date, imgs, link];
 }
 
 function overwrite_overlay_object(eventOverlay, arr) {
@@ -36,6 +39,13 @@ function overwrite_overlay_object(eventOverlay, arr) {
     .querySelector("img[alt='Event main image']")
     .setAttribute("src", arr[0]);
   eventOverlay.querySelector("h2").innerText = arr[1];
+  if(arr[5]=== "" || arr[5]=== null) {
+    eventOverlay.querySelector("a").style.display="none";
+  }else{
+    l = eventOverlay.querySelector("a");
+    l.setAttribute("href",arr[5]);
+    l.style.display="flex";
+  }
   eventOverlay.querySelector(".Event__header__desc").innerText = arr[2];
   eventOverlay.querySelector("p").innerText = arr[3];
 

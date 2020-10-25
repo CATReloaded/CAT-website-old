@@ -45,7 +45,7 @@
         <h3>{{circle.name}}</h3>
         <p>{{circle.description}}</p>
         <h4>Leader</h4>
-        <p class="leader-name">{{circle.leader}}</p>
+        <p class="leader-name">{{ circle.leader.name }}</p>
         <a href="{% url 'circle' circle.name %}">See more</a>
       </section>
       {% endfor %}
@@ -61,12 +61,13 @@
           <h3>{{circle.name}}</h3>
           <p>{{circle.description}}</p>
           <h4>Leader</h4>
-          <p class="leader-name">{{circle.leader}}</p>
+          <p class="leader-name">{{ circle.leader.name }}</p>
           <a href="{% url 'circle' circle.name %}">See more</a>
         </section>
       {% endfor %}
     </section>
     <!-- End Non-technical circles -->
+    
     <!-- Start Blogs -->
     <section class="container blogs">
       <h2>Blogs</h2>

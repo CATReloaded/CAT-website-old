@@ -25,12 +25,14 @@
         <div class="Events__event__content">
           <h2>{{event.name}}</h2>
           <span data-text="{{event.date}}">{{event.date|date:"M Y"}}</span>
-          <p data-text="{{event.description}}">{{ event.description|truncatechars:80 }}</p>
+          <p data-text="{{event.description}}">{{ event.description|truncatechars:60 }}</p>
         </div>
         <div class="Events__event__circle"></div>
         {% for image in event.images.all %}
           <div data-row="{{image.img}}" id="eveimgs"></div>
         {% endfor %}
+        <div data-text="{% if event.is_active %}{{event.form_link}}{% endif %}" id="link"></div>
+        
       </section>
     {% endfor %}
   </main>
@@ -50,7 +52,7 @@
       </div>
       <div class="Event__header__heading">
         <h2></h2>
-        <a href="/"> Register Now </a>
+        <a href=""> Register Now </a>
       </div>
       <p></p>
       <p class="Event__header__desc"></p>

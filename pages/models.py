@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import FileExtensionValidator
-
+from django.utils import timezone
 
 
 class Circle(models.Model):
@@ -67,10 +67,17 @@ class Reward(models.Model):
     
 
 class Event(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, unique=True, null=True, blank=True)
     description = models.TextField()
     image = models.ImageField()
     date = models.DateTimeField()
+    form_link = models.URLField()
+
+
+    @property
+    def is_active(self):
+        return self.date > timezone.now()
+
 
     def __str__(self):
         return self.name

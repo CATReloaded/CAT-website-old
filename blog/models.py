@@ -7,7 +7,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+    def natural_key(self):
+        return self.name
 
 
 class Article(models.Model):

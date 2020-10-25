@@ -13,7 +13,7 @@ const blog = ({
   category,
 }) => `<img src="/media/${image}" alt="Article image">
             <h3><a href="/blogs/single_blog/${title}">${title}</a></h3>
-            <p>${body}</p>
+            <p>${body.substring(0,350)}...</p>
             <footer>
               <p><img src="/static/images/category.svg" alt="Category icon">${category}</p>
               <a href="/blogs/single_blog/${title}">See More</a>
