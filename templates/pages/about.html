@@ -7,10 +7,10 @@
     CAT <span>Reloaded</span>
   </h1>
   <p>
-    CAT "is a non-profit foundation focused on" Computer Science and IT
+    "CAT" is a non-profit foundation focused on Computer Science and IT
     specially Open Source technologies
   </p>
-  <button>Our Members</button>
+  <a href="{% url 'members' %}">Our Members</a>
 </header>
 <main class="About__main">
   <!-- Mission -->
@@ -43,25 +43,23 @@
     </div>
   </section>
 
-  <!-- Follow US -->
-  <section class="About__main__followus">
-    <div class="About__main__followus__content">
-      <h2>Follow Us</h2>
-      <a href="https://www.facebook.com/CATReloaded" target="_blank"><img src="{% static 'images/facebook-big.svg' %}"
-          alt="Facebook page"></a>
-      <a href="https://twitter.com/CATReloaded"><img src="{% static 'images/twitter-big.svg' %}"
-          alt="Twitter account"></a>
-  
-      <a href="https://www.instagram.com/catreloaded/?hl=en"><img src="{% static 'images/instagram-big.svg' %}"
-          alt="Instagram account"></a>
-      <a href="https://www.youtube.com/channel/UCJaNoxBopnEOli2mI7PTlgg"><img src="{% static 'images/youtube-big.svg' %}"
-          alt="Youtube channel"></a>
-      <a href="https://www.linkedin.com/company/cat-reloaded/"><img src="{% static 'images/linkedin-big.svg' %}"
-          alt="Linkedin profile"></a>
-    </div>
+  <!-- Play video -->
+  <section class="About__main__video">
+    <button>
+      <img src="{% static '/images/play-button.svg' %}" alt="Play video">
+    </button>
+  </section>
+
+  <!-- Video -->
+  <section class="video-player hidden">
+    <button class="video-player__close">&times;</button>
+    <iframe src="https://www.youtube.com/embed/AUHNm0hE9PI" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
   </section>
 </main>
 
 {% endblock content %} {% block js %}
 <script src="{% static 'js/navigation.js' %}"></script>
+<script src="{% static 'js/about.js' %}"></script>
 {% endblock js %}
