@@ -64,7 +64,7 @@ body, button, input, textarea, select {
   column-gap: 16px;
   list-style: none;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 857px) {
   .Navbar > ul {
     position: absolute;
     display: block;
@@ -135,7 +135,7 @@ body, button, input, textarea, select {
 .Navbar__hamburger-menu {
   padding: 5px;
 }
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 858px) {
   .Navbar__hamburger-menu {
     display: none;
   }
@@ -176,7 +176,7 @@ body, button, input, textarea, select {
   color: #CACACA;
   font-size: 14px;
 }
-@media screen and (min-width: 875px) {
+@media screen and (min-width: 940px) {
   .Footer {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -184,7 +184,7 @@ body, button, input, textarea, select {
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 480px) and (max-width: 874px) {
+@media screen and (min-width: 480px) and (max-width: 939px) {
   .Footer {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -198,7 +198,7 @@ body, button, input, textarea, select {
 .Footer__discover-team ul {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: 80px 80px;
+  grid-template-columns: 80px 100px;
   column-gap: 16px;
   list-style-position: inside;
 }
@@ -1809,9 +1809,10 @@ body, button, input, textarea, select {
   max-width: 350px;
   text-align: center;
 }
-.About__header button {
+.About__header a {
   position: relative;
   z-index: 3;
+  display: block;
   background-color: #000000;
   color: #ffffff;
   padding: 16px;
@@ -1832,11 +1833,12 @@ body, button, input, textarea, select {
   width: 65%;
   height: 100%;
   margin-left: auto;
-  background: url("../images/about__background1.png") rgba(0, 0, 0, 0.588);
+  background: url("../images/about__background1.JPG") rgba(0, 0, 0, 0.588);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
+  background-size: cover;
 }
-.About__main__mission__content, .About__main__vision__content, .About__main__followus__content {
+.About__main__mission__content, .About__main__vision__content {
   position: relative;
   z-index: 3;
   background-color: #ffffff;
@@ -1845,45 +1847,82 @@ body, button, input, textarea, select {
   padding: 100px 40px;
 }
 @media screen and (min-width: 600px) {
-  .About__main__mission__content, .About__main__vision__content, .About__main__followus__content {
+  .About__main__mission__content, .About__main__vision__content {
     width: 50%;
   }
 }
-.About__main__mission__content h2, .About__main__vision__content h2, .About__main__followus__content h2 {
+.About__main__mission__content h2, .About__main__vision__content h2 {
   font-size: 40px;
   margin-bottom: 32px;
 }
-.About__main__mission__content p, .About__main__vision__content p, .About__main__followus__content p {
+.About__main__mission__content p, .About__main__vision__content p {
   color: #707070;
 }
 .About__main__vision {
   justify-content: flex-end;
 }
 .About__main__vision__overlay {
-  background-image: url("../images/about__background2.png");
+  background-image: url("../images/about__background2.JPG");
   right: unset;
   left: 0;
 }
-.About__main__vision__content, .About__main__followus__content {
+.About__main__vision__content {
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.161);
 }
-.About__main__followus {
-  background: url("../images/about__background3.png") rgba(0, 0, 0, 0.588);
+.About__main__video {
+  background: url("../images/about__background3.jpg") rgba(0, 0, 0, 0.588);
   background-blend-mode: overlay;
   background-size: cover;
+  background-position: center;
   min-height: calc(100vh - 204px);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   padding: 16px 7.5%;
-  text-align: center;
 }
-.About__main__followus__content a:not(:last-of-type) {
-  margin-right: 24px;
+.About__main__video button {
+  width: 80px;
 }
-.About__main__followus__content a img {
-  width: 64px;
-  height: 64px;
+.About__main .video-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.541);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  min-height: 100vh;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  height: 100vh;
+}
+.About__main .video-player.hidden {
+  min-height: 0;
+  min-width: 0;
+  width: 0;
+  height: 0;
+}
+.About__main .video-player__close {
+  position: absolute;
+  top: 40px;
+  right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 36px;
+  height: 36px;
+  background-color: #ffdfdf;
+  color: #e70000;
+  border-radius: 50%;
+  font-size: 2em;
+  outline: none;
+}
+.About__main .video-player iframe {
+  max-width: 80%;
+  width: 560px;
+  height: 315px;
 }
 
 .article {

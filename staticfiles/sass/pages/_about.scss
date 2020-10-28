@@ -29,7 +29,7 @@
         width: 300px;
         display: block;
         @media screen and (max-width: 320px) {
-            width: 200px;
+          width: 200px;
         }
       }
 
@@ -46,9 +46,10 @@
       text-align: center;
     }
 
-    button {
+    a {
       position: relative;
       z-index: 3;
+      display: block;
       background-color: $black-color;
       color: $white-color;
       padding: 16px;
@@ -72,9 +73,10 @@
         width: 65%;
         height: 100%;
         margin-left: auto;
-        background: url("../images/about__background1.png") rgba(0, 0, 0, 0.588);
+        background: url("../images/about__background1.JPG") rgba(0, 0, 0, 0.588);
         background-blend-mode: overlay;
         background-repeat: no-repeat;
+        background-size: cover;
       }
 
       &__content {
@@ -85,7 +87,7 @@
         box-shadow: -10px -10px 15px $shadow-color;
         padding: 100px 40px;
         @media screen and (min-width: 600px) {
-            width: 50%;
+          width: 50%;
         }
 
         h2 {
@@ -105,7 +107,7 @@
 
       &__overlay {
         @extend .About__main__mission__overlay;
-        background-image: url("../images/about__background2.png");
+        background-image: url("../images/about__background2.JPG");
         right: unset;
         left: 0;
       }
@@ -116,30 +118,64 @@
       }
     }
 
-    &__followus {
-      background: url("../images/about__background3.png") rgba(0, 0, 0, 0.588);
+    &__video {
+      background: url("../images/about__background3.jpg") rgba(0, 0, 0, 0.588);
       background-blend-mode: overlay;
       background-size: cover;
+      background-position: center;
       min-height: calc(100vh - 204px);
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       padding: 16px 7.5%;
-      text-align: center;
 
-      &__content {
-        @extend .About__main__vision__content;
+      button {
+        width: 80px;
+      }
+    }
 
-        a {
-          &:not(:last-of-type) {
-            margin-right: 24px;
-          }
+    .video-player {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.541);
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 100%;
+      min-height: 100vh;
+      transition: $transition;
+      width: 100%;
+      height: 100vh;
 
-          img {
-            width: 64px;
-            height: 64px;
-          }
-        }
+      &.hidden {
+        min-height: 0;
+        min-width: 0;
+        width: 0;
+        height: 0;
+      }
+
+      &__close {
+        position: absolute;
+        top: 40px;
+        right: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 36px;
+        height: 36px;
+        background-color: #ffdfdf;
+        color: $main-color;
+        border-radius: 50%;
+        font-size: 2em;
+        outline: none;
+      }
+
+      iframe {
+        max-width: 80%;
+        width: 560px;
+        height: 315px;
       }
     }
   }

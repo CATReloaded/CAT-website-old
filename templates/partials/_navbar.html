@@ -2,7 +2,7 @@
   <!-- Start Navbar -->
   <nav class="wide-container Navbar">
     <!-- Logo -->
-    <img src="{% static 'images/logo.svg' %} " alt="CAT Reloaded logo">
+    <img src="{% static 'images/About__logo.svg' %}" height="45" alt="CAT Reloaded logo">
     <!-- Navigation items -->
     <ul>
       <li 
@@ -23,7 +23,7 @@
 			 {% else %} 
           class=""
          {% endif %} > 
-      <a href="{% url 'blogs' %}">Blogs</a>
+      <a href="https://blog.catreloaded.org/" target="_blank">CATazine</a>
       </li>
       <li  {% if '/events/' == request.path %}
           class="active"
